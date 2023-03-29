@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\QL_NhanVien.cs" />
     <Compile Include="VIEW\DanhSachKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,7 +171,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BLL\" />
     <Folder Include="DAL\" />
     <Folder Include="DTO\" />
   </ItemGroup>

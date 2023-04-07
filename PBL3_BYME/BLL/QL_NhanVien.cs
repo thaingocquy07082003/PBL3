@@ -8,5 +8,6 @@ namespace PBL3_BYME.BLL
 {
     public  class QL_NhanVien
     {
+       
     }
 }

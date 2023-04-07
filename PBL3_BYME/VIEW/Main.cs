@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL3_BYME.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,16 +8,57 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using PBL3_BYME.DTO;
+using PBL3_BYME.BLL;
 namespace PBL3_BYME
 {
     public partial class Main : Form
     {
+        private string IDNhanVien { get; set; } // dac trung cho chuc vu ( cap quyen cho moi nhan vien)
+        private QLKSEntities db = new QLKSEntities();
+        private QL_TaiKhoan qltk = new QL_TaiKhoan();
         public Main()
         {
             InitializeComponent();
         }
 
+        public Main(string Id)
+        {
+            IDNhanVien = Id;
+            InitializeComponent();
+            PhanQuyen(GetTKView(IDNhanVien));
+        }
+        
+        // Lay tai khoan dang nhap hien tai voi dang TaiKhoanView
+        public  TaiKhoanView GetTKView(string Id)
+        {
+            TaiKhoanView tk = new TaiKhoanView();
+            foreach(TaiKhoanView i in qltk.getAllTaiKhoan())
+            {
+                if(i.IdNhanVien == Id)
+                {
+                    tk = i;
+                    break;
+                }
+            }
+            return tk;
+        }
+        
+        // Phan Quyen
+        public void PhanQuyen(TaiKhoanView tk)
+        {
+            if(tk.ChucVu == "Admin")
+            {
+
+            }
+            else if (tk.ChucVu == "NhanVien")
+            {
+                button9.Visible = false;
+                button9.Enabled = false;
+                button3.Visible = false;
+                button3.Enabled = false;
+            }
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -73,6 +115,11 @@ namespace PBL3_BYME
         }
 
         private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
         {
 
         }

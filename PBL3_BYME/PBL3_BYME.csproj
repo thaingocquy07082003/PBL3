@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\QL_NhanVien.cs" />
+    <Compile Include="BLL\QL_TaiKhoan.cs" />
     <Compile Include="Book.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
@@ -74,6 +75,7 @@
     <Compile Include="DichVu.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\TaiKhoanView.cs" />
     <Compile Include="HoaDon.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
@@ -252,7 +254,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\" />
-    <Folder Include="DTO\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="QLKS.Context.tt">

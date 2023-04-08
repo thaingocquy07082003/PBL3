@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d45d5a0a19af465a9ae166607d9c7f28" Name="Diagram1">
+        <EntityTypeShape EntityType="QLKSModel.Books" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKSModel.ChiTietBooks" Width="1.5" PointX="5.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKSModel.ChiTietSuDungDichVus" Width="1.5" PointX="8.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKSModel.ChiTietThuePhongs" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKSModel.ChucVus" Width="1.5" PointX="3" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKSModel.DichVus" Width="1.5" PointX="6" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKSModel.HoaDons" Width="1.5" PointX="7.5" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKSModel.KhachHangs" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKSModel.LamHus" Width="1.5" PointX="5.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKSModel.LichSuDangNhaps" Width="1.5" PointX="7.5" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKSModel.LoaiPhongs" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKSModel.LoaiVatDungs" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKSModel.NhanViens" Width="1.5" PointX="5.25" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKSModel.Phongs" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKSModel.TaiKhoans" Width="1.5" PointX="3" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLKSModel.VatDungPhongs" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="QLKSModel.FK_Books_KhachHangs" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKSModel.FK_Books_NhanViens" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKSModel.FK_ChiTietBooks_Books" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKSModel.FK_ChiTietBooks_Phongs" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKSModel.FK_ChiTietSuDungDichVus_DichVus" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKSModel.FK_ChiTietSuDungDichVus_HoaDons" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKSModel.FK_ChiTietSuDungDichVus_Phongs" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKSModel.FK_ChiTietThuePhongs_HoaDons" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKSModel.FK_ChiTietThuePhongs_Phongs" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKSModel.FK_NhanViens_ChucVus" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKSModel.FK_HoaDons_KhachHangs1" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKSModel.FK_HoaDons_LamHus" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKSModel.FK_HoaDons_NhanViens" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKSModel.FK_LamHus_LoaiVatDungs" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKSModel.FK_LamHus_Phongs" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKSModel.FK_LichSuDangNhaps_NhanViens" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKSModel.FK_Phongs_LoaiPhongs" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKSModel.FK_VatDungPhongs_LoaiVatDungs" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKSModel.FK_NhanViens_TaiKhoans" ManuallyRouted="false" />
+        <AssociationConnector Association="QLKSModel.FK_VatDungPhongs_Phongs" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

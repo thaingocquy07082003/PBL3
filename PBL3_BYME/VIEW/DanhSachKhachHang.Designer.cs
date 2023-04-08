@@ -194,7 +194,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(27, 599);
+            this.button1.Location = new System.Drawing.Point(27, 579);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 42);
             this.button1.TabIndex = 16;
@@ -203,7 +203,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(155, 599);
+            this.button2.Location = new System.Drawing.Point(152, 579);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(71, 42);
             this.button2.TabIndex = 17;
@@ -212,7 +212,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(280, 599);
+            this.button3.Location = new System.Drawing.Point(274, 579);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(72, 42);
             this.button3.TabIndex = 18;
@@ -223,7 +223,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(539, 56);
+            this.label9.Location = new System.Drawing.Point(432, 32);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(132, 20);
             this.label9.TabIndex = 19;
@@ -232,21 +232,21 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(711, 56);
+            this.comboBox2.Location = new System.Drawing.Point(570, 32);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 24);
             this.comboBox2.TabIndex = 20;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(872, 56);
+            this.textBox7.Location = new System.Drawing.Point(720, 32);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(230, 22);
             this.textBox7.TabIndex = 21;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(1153, 50);
+            this.button4.Location = new System.Drawing.Point(989, 28);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(125, 30);
             this.button4.TabIndex = 22;
@@ -257,11 +257,11 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(500, 122);
+            this.dataGridView1.Location = new System.Drawing.Point(436, 103);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1064, 499);
+            this.dataGridView1.Size = new System.Drawing.Size(786, 518);
             this.dataGridView1.TabIndex = 23;
             // 
             // DanhSachKhachHang
@@ -269,7 +269,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1717, 767);
+            this.ClientSize = new System.Drawing.Size(1241, 673);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox7);

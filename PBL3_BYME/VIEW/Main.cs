@@ -17,6 +17,7 @@ namespace PBL3_BYME
         private string IDNhanVien { get; set; } // dac trung cho chuc vu ( cap quyen cho moi nhan vien)
         private QLKSEntities db = new QLKSEntities();
         private QL_TaiKhoan qltk = new QL_TaiKhoan();
+        private Form currentChildForm;
         public Main()
         {
             InitializeComponent();
@@ -71,47 +72,52 @@ namespace PBL3_BYME
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormDatPhong datphong = new FormDatPhong();
-            datphong.ShowDialog();
-            datphong = null;
-            this.Show();
+            //this.Hide();
+            //FormDatPhong datphong = new FormDatPhong();
+            //datphong.ShowDialog();
+            //datphong = null;
+            //this.Show();
+            OpenChildForm(new FormDatPhong());
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            DanhSachKhachHang dskh = new DanhSachKhachHang();
-            dskh.ShowDialog();
-            dskh = null;
-            this.Show();
+            //this.Hide();
+            //DanhSachKhachHang dskh = new DanhSachKhachHang();
+            //dskh.ShowDialog();
+            //dskh = null;
+            //this.Show();
+            OpenChildForm(new DanhSachKhachHang());
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            QLNguoiDung qlnd = new QLNguoiDung();
-            qlnd.ShowDialog();
-            qlnd = null;
-            this.Show();
+            //this.Hide();
+            //QLNguoiDung qlnd = new QLNguoiDung();
+            //qlnd.ShowDialog();
+            //qlnd = null;
+            //this.Show();
+            OpenChildForm(new QLNguoiDung());
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormHome fh = new FormHome();
-            fh.ShowDialog();
-            fh = null;
-            this.Show();
+            //this.Hide();
+            //FormHome fh = new FormHome();
+            //fh.ShowDialog();
+            //fh = null;
+            //this.Show();
+            OpenChildForm(new FormHome());
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormBaoCao bc = new FormBaoCao();
-            bc.ShowDialog();
-            bc = null;
-            this.Show();
+            //this.Hide();
+            //FormBaoCao bc = new FormBaoCao();
+            //bc.ShowDialog();
+            //bc = null;
+            //this.Show();
+            OpenChildForm(new FormBaoCao());
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -123,5 +129,23 @@ namespace PBL3_BYME
         {
 
         }
+        private void OpenChildForm(Form childForm)
+        {
+            //open only form
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            //End
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelDeskTop.Controls.Add(childForm);
+            panelDeskTop.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+        
     }
 }

@@ -47,6 +47,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.panelDeskTop = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -97,13 +98,13 @@
             this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Location = new System.Drawing.Point(186, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1137, 127);
+            this.panel4.Size = new System.Drawing.Size(1361, 127);
             this.panel4.TabIndex = 1;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(984, 10);
+            this.pictureBox3.Location = new System.Drawing.Point(1207, 10);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(124, 103);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -238,12 +239,20 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // panelDeskTop
+            // 
+            this.panelDeskTop.Location = new System.Drawing.Point(215, 142);
+            this.panelDeskTop.Name = "panelDeskTop";
+            this.panelDeskTop.Size = new System.Drawing.Size(1332, 679);
+            this.panelDeskTop.TabIndex = 3;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.ClientSize = new System.Drawing.Size(1485, 752);
+            this.ClientSize = new System.Drawing.Size(1559, 833);
+            this.Controls.Add(this.panelDeskTop);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
@@ -281,5 +290,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Panel panelDeskTop;
     }
 }

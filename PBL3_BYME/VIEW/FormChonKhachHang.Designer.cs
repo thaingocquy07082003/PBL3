@@ -73,6 +73,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(142, 24);
             this.comboBox1.TabIndex = 3;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
@@ -96,6 +97,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -108,6 +110,7 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "CANCELL";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -120,6 +123,7 @@
             this.button3.TabIndex = 7;
             this.button3.Text = "Khách Hàng Mới";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // FormChonKhachHang
             // 

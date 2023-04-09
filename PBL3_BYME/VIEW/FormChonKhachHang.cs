@@ -13,7 +13,7 @@ namespace PBL3_BYME
 {
     public partial class FormChonKhachHang : Form
     {
-        public delegate void Mydel(string a);
+        public delegate void Mydel(string IDkh);
         public Mydel d;
         
         public FormChonKhachHang()

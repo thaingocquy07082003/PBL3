@@ -11,7 +11,7 @@ namespace PBL3_BYME.DTO
         public string IdKhachHang { get; set; }
         public string Ten { get; set; }
         public string GioiTinh { get; set; }
-        
+      
         public string CMND { get; set; }
         public string SDT { get; set; }
         public string QuocTich { get; set; }

@@ -9,6 +9,91 @@ namespace PBL3_BYME.BLL
 {
     public class DatPhong_BLL
     {
-        
+        private QLKSEntities db = new QLKSEntities();
+
+        // Lay Danh sach tat ca cac phong co trong bang PHONG
+       public List<PHONG> GetAllPhong()
+        {
+            List<PHONG> phongList = db.PHONGs.ToList();
+            return phongList;
+        }
+
+        // Tu Dong Xu Li Tao Moi 1 IDBook
+        public string getNewIDBook()
+        {
+            List<string> data = new List<string>();
+            foreach (var i in db.Books.Select(p => p).OrderBy(p => p.IdBook))
+            {
+                data.Add(i.IdBook.Substring(1));
+            }
+            int idtt = Convert.ToInt32(data.Select(v => int.Parse(v)).Max()) + 1;
+            return "B" + idtt.ToString();
+        }
+
+        // Tu Dong lay 1 IDNhanVien voi trang thai true - tuc la dang co kha nang phuc vu
+        public string getIDNhanVien()
+        {
+            foreach (var i in db.NhanViens.Select(p => p))
+            {
+                if (i.TaiKhoan.TrangThai == true)
+                {
+                    return i.IdNhanVien;
+                }
+            }
+            return null;
+        }
+
+        // Kiem tra ton tai cua 1 IdBook
+        public bool CheckIDBook(string idkhach)
+        {
+            foreach (var i in db.Books.Select(p => p))
+            {
+                if (i.IdKhachHang == idkhach && i.TrangThai == false)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // Lay IdBook bang 1 IdKhachHang
+        public string GetIdBookByIdKH(string id)
+        {
+            string str = "";
+            foreach(var i in db.Books.ToList())
+            {
+                if(i.IdKhachHang == id && i.TrangThai == false)
+                {
+                    str = i.IdBook.ToString();
+                }
+            }
+            return str;
+        }
+
+        // Lay IDPhong bang ten phong tuong ung
+        public string GetIDPhongByTenPhong(string name)
+        {
+            string s = "";
+            foreach(var i in db.PHONGs.ToList())
+            {
+                if( i.TenPhong == name)
+                {
+                    s = i.TenPhong;
+                }
+            }
+            return s;
+        }
+
+        // tu dong lay 1 IdChiTietBook
+        public string GetNewIDCTB()
+        {
+            List<string> data = new List<string>();
+            foreach (var i in db.ChiTietBooks.Select(p => p).OrderBy(p => p.IdChiTietBook))
+            {
+                data.Add(i.IdChiTietBook.Substring(1));
+            }
+            int idtt = Convert.ToInt32(data.Select(v => int.Parse(v)).Max()) + 1;
+            return "CTB" + idtt.ToString();
+        }
     }
 }

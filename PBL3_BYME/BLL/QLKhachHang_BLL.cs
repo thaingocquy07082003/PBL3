@@ -10,7 +10,6 @@ namespace PBL3_BYME.BLL
     {
         private QLKS_DB db = new QLKS_DB();
         private static QLKhachHang_BLL _Instance;
-
         public static QLKhachHang_BLL Instance
         {
             get

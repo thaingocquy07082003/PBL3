@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\QLKhachHang_BLL.cs" />
     <Compile Include="BLL\QL_KhachHang.cs" />
     <Compile Include="BLL\QL_NhanVien.cs" />
     <Compile Include="Books.cs">
@@ -75,6 +76,7 @@
     <Compile Include="DichVus.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\KhachHang_DTO.cs" />
     <Compile Include="HoaDons.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
@@ -251,7 +253,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\" />
-    <Folder Include="DTO\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

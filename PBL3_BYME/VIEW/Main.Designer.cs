@@ -48,12 +48,15 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panelDeskTop = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel5.SuspendLayout();
+            this.panelDeskTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -146,7 +149,7 @@
             this.panel5.Controls.Add(this.button1);
             this.panel5.Location = new System.Drawing.Point(-3, 127);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(210, 660);
+            this.panel5.Size = new System.Drawing.Size(196, 706);
             this.panel5.TabIndex = 2;
             // 
             // button9
@@ -162,11 +165,12 @@
             // button8
             // 
             this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.Location = new System.Drawing.Point(3, 446);
+            this.button8.Location = new System.Drawing.Point(3, 447);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(208, 65);
             this.button8.TabIndex = 7;
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 
@@ -241,10 +245,21 @@
             // 
             // panelDeskTop
             // 
-            this.panelDeskTop.Location = new System.Drawing.Point(215, 142);
+            this.panelDeskTop.Controls.Add(this.pictureBox4);
+            this.panelDeskTop.Location = new System.Drawing.Point(214, 141);
             this.panelDeskTop.Name = "panelDeskTop";
-            this.panelDeskTop.Size = new System.Drawing.Size(1332, 679);
+            this.panelDeskTop.Size = new System.Drawing.Size(1333, 692);
             this.panelDeskTop.TabIndex = 3;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(-15, -6);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(1360, 698);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
             // 
             // Main
             // 
@@ -266,6 +281,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel5.ResumeLayout(false);
+            this.panelDeskTop.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -291,5 +308,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panelDeskTop;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

@@ -146,6 +146,10 @@ namespace PBL3_BYME
             childForm.BringToFront();
             childForm.Show();
         }
-        
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

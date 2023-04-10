@@ -34,5 +34,11 @@ namespace PBL3_BYME
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormDatPhong f = new FormDatPhong();
+            f.Show();
+        }
     }
 }

@@ -50,7 +50,8 @@ namespace PBL3_BYME
                 MessageBox.Show("Vui lòng chọn khách hàng !");
             }
             string IdBook = label4.Text;
-            if(datphong.CheckIDBook(IdBook) == true)
+            
+            if(datphong.CheckIDBook(label5.Text) == true)
             {
                 IdBook = datphong.GetIdBookByIdKH(label5.Text);
             }
@@ -104,7 +105,20 @@ namespace PBL3_BYME
 
         private void button7_Click(object sender, EventArgs e)
         {
-
+            if (comboBox1.SelectedItem == null || dataGridView2.Rows.Count <= 0)
+            {
+                MessageBox.Show("Không hợp lệ");
+                return;
+            }
+            int tiencoc = 0;
+            if (textBox1.Text != "") tiencoc = Convert.ToInt32(textBox1.Text);
+            if (datphong.CheckIDBook(label5.Text) == false)// kh chưa có book trong hệ thống
+            {
+                datphong.AddBook(label5.Text, label6.Text, tiencoc);
+            }
+            datphong.AddChiTiet(listchitiet);
+            MessageBox.Show("Đặt Phòng Thành Công");
+            this.Close();
         }
     }
 }

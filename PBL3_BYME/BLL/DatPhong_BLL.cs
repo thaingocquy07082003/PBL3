@@ -56,7 +56,7 @@ namespace PBL3_BYME.BLL
             return false;
         }
 
-        // Lay IdBook bang 1 IdKhachHang
+        // Lay IdBook bang 1 IdKhachHang trong bang Book
         public string GetIdBookByIdKH(string id)
         {
             string str = "";
@@ -78,7 +78,7 @@ namespace PBL3_BYME.BLL
             {
                 if( i.TenPhong == name)
                 {
-                    s = i.TenPhong;
+                    s = i.IdPhong;
                 }
             }
             return s;
@@ -94,6 +94,46 @@ namespace PBL3_BYME.BLL
             }
             int idtt = Convert.ToInt32(data.Select(v => int.Parse(v)).Max()) + 1;
             return "CTB" + idtt.ToString();
+        }
+
+        // Them vao Book( IdKhachHang, IdNhanVien, sotiendat )
+        public void AddBook(string idkhach, string idNV, int tien)
+        {
+            Book s = new Book
+            {
+                IdBook = getNewIDBook(),
+                IdKhachHang = idkhach,
+                IdNhanVien = idNV,
+                TrangThai = false,
+                TienCoc = tien,
+            };
+            db.Books.Add(s);
+            db.SaveChanges();
+        }
+
+        // Them Vao Book voi dieu kien da ton tai khach hang da thue phong truoc do
+        public void AddBook2(string idkhach, string idNV, int tien)
+        {
+            Book s = new Book
+            {
+                IdBook = GetIdBookByIdKH(idkhach),
+                IdKhachHang = idkhach,
+                IdNhanVien = idNV,
+                TrangThai = false,
+                TienCoc = tien,
+            };
+            db.Books.Add(s);
+            db.SaveChanges();
+        }
+
+        // them chi tiet book 
+        public void AddChiTiet(List<ChiTietBook> data)
+        {
+            foreach (ChiTietBook i in data)
+            {
+                db.ChiTietBooks.Add(i);
+            }
+            db.SaveChanges();
         }
     }
 }

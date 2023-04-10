@@ -31,13 +31,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHome));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.ID_Phong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Loai_Phong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TTPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CostOfRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Place = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,25 +70,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(704, 409);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // button1
-            // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(148, 463);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(185, 48);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(495, 463);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(188, 48);
-            this.button2.TabIndex = 2;
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // ID_Phong
             // 
@@ -124,6 +105,26 @@
             this.Place.MinimumWidth = 6;
             this.Place.Name = "Place";
             this.Place.Width = 125;
+            // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(148, 463);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(185, 48);
+            this.button1.TabIndex = 1;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(495, 463);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(188, 48);
+            this.button2.TabIndex = 2;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FormHome
             // 

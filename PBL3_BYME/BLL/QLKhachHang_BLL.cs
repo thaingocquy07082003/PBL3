@@ -40,7 +40,7 @@ namespace PBL3_BYME.BLL
             {
                 var t = db.KhachHangs.Where(p => p.IdKhachHang == khachHang.IdKhachHang).FirstOrDefault();
                 t.CMND = khachHang.CMND;
-                t.SDT = khachHang.SDT;
+                t.SDT = khachHang.SDT;  
                 t.Ten = khachHang.Ten;
                 t.GioiTinh = khachHang.GioiTinh;
                 t.GhiChu = khachHang.GhiChu;
@@ -51,6 +51,25 @@ namespace PBL3_BYME.BLL
             {
                 db.KhachHangs.Add(khachHang);
                 db.SaveChanges();
+            }
+        }
+        public void delete(string id)
+        {
+            foreach (KhachHangs i in db.KhachHangs.ToList())
+            {
+                if (i.IdKhachHang == id)
+                {
+                    try
+                    {
+                        db.KhachHangs.Remove(i);
+                        db.SaveChanges();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                    }
+
+                }
             }
         }
     }

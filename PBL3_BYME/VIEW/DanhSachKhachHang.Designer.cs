@@ -210,6 +210,7 @@
             this.button2.TabIndex = 17;
             this.button2.Text = "Sửa";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -219,6 +220,7 @@
             this.button3.TabIndex = 18;
             this.button3.Text = "Xóa";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label9
             // 
@@ -265,6 +267,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1064, 499);
             this.dataGridView1.TabIndex = 23;
+            
             // 
             // DanhSachKhachHang
             // 

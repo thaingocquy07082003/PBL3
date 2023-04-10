@@ -18,6 +18,7 @@ namespace PBL3_BYME
         {
             InitializeComponent();
             showCBB();
+            showKH();
         }
         private void showCBB()
         {
@@ -27,7 +28,8 @@ namespace PBL3_BYME
             comboBox2.Items.AddRange(item);
             comboBox2.SelectedIndex = 0;
             comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-        }private void showKH()
+        }
+        private void showKH()
         {
             QLKS_DB dB = new QLKS_DB();
             dataGridView1.DataSource = dB.KhachHangs.ToList();
@@ -74,6 +76,68 @@ namespace PBL3_BYME
             }
             QLKhachHang_BLL.Instance.addOrUpdate(khachHang);
             showKH();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                addOrUpdate(textBox1.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Bạn cần phải nhập đầy đủ thông tin");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow i in dataGridView1.SelectedRows)
+                {
+                    DialogResult confirmResult = MessageBox.Show("Bạn có chắc muốn xoá khách hàng mã số " + i.Cells["IdKhachHang"].Value.ToString() + " không?", "Cảnh báo", MessageBoxButtons.YesNo);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        QLKhachHang_BLL.Instance.delete(i.Cells["IdKhachHang"].Value.ToString());
+                    }
+                    else
+                    {
+
+                    }
+                }
+            }
+            showKH() ;
+        }
+        private void sapxep()
+        {
+
+        }
+        private void dataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            showInfoKH(dataGridView1.SelectedRows[0].Cells["IdKhachHang"].Value.ToString());
+        }
+        private void showInfoKH(string id)
+        {
+            KhachHangs khachHang = QLKhachHang_BLL.Instance.findKhachHangById(id);
+            if (khachHang != null)
+            {
+                textBox1.Text = khachHang.IdKhachHang;
+                textBox1.Enabled = false;
+                textBox3.Text = khachHang.CMND;
+                textBox2.Text = khachHang.Ten;
+                textBox6.Text = khachHang.GhiChu;
+                textBox5.Text = khachHang.QuocTich;
+                textBox4.Text = khachHang.SDT;
+                if ((bool)khachHang.GioiTinh)
+                {
+                    comboBox1.SelectedIndex = 0;
+                }
+                else
+                {
+                    comboBox1.SelectedIndex = 1;
+                }
+            }
         }
     }
 }

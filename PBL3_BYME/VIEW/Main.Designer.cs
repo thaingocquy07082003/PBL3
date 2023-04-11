@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -49,6 +50,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panelDeskTop = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.MenuQuanLi = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.MenuBaocao = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.MenuUser = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -57,6 +64,7 @@
             this.panel5.SuspendLayout();
             this.panelDeskTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.MenuUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -113,6 +121,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // label1
             // 
@@ -261,6 +270,51 @@
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
             // 
+            // MenuQuanLi
+            // 
+            this.MenuQuanLi.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.MenuQuanLi.Name = "MenuQuanLi";
+            this.MenuQuanLi.Size = new System.Drawing.Size(61, 4);
+            this.MenuQuanLi.Text = "MenuQuanLi";
+            // 
+            // MenuBaocao
+            // 
+            this.MenuBaocao.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.MenuBaocao.Name = "contextMenuStrip2";
+            this.MenuBaocao.Size = new System.Drawing.Size(61, 4);
+            this.MenuBaocao.Text = "MenuBaoCao";
+            // 
+            // MenuUser
+            // 
+            this.MenuUser.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.MenuUser.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3});
+            this.MenuUser.Name = "MenuUser";
+            this.MenuUser.ShowCheckMargin = true;
+            this.MenuUser.Size = new System.Drawing.Size(235, 76);
+            this.MenuUser.Text = "MenuUser";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(234, 24);
+            this.toolStripMenuItem1.Text = "Thông Tin Tài Khoản";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(234, 24);
+            this.toolStripMenuItem2.Text = "Đổi Mật Khẩu";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(234, 24);
+            this.toolStripMenuItem3.Text = "Đăng Xuất";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -283,6 +337,7 @@
             this.panel5.ResumeLayout(false);
             this.panelDeskTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.MenuUser.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -309,5 +364,11 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panelDeskTop;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.ContextMenuStrip MenuBaocao;
+        private System.Windows.Forms.ContextMenuStrip MenuUser;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        public System.Windows.Forms.ContextMenuStrip MenuQuanLi;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
     }
 }

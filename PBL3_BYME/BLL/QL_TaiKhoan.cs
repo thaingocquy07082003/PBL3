@@ -66,7 +66,32 @@ namespace PBL3_BYME.BLL
             return s;
         }
 
-        
+        // Lay Danh Sach LichSuDangNhap
+        public List<LichSuDangNhap> getAllLichSuByIdNhanVien(string IdNhanVien)
+        {
+            List<LichSuDangNhap> data = new List<LichSuDangNhap>();
+            foreach (LichSuDangNhap i in db.LichSuDangNhaps.Where(x => x.IdNhanVien == IdNhanVien))
+            {
+                data.Add(i);
+            }
+            return data;
+        }
 
+        // Cap Nhat Trang Thai cho Tai Khoan ( true - Dang online hoac dc dang nhap , false thi nguoc lai )
+        public void updateTrangThaiTK(string tenDangNhap)
+        {
+            foreach (var t in db.TaiKhoans.ToList())
+            {
+                if (t.TenDangNhap != tenDangNhap)
+                {
+                    t.TrangThai = false;
+                }
+                else
+                {
+                    t.TrangThai = true;
+                }
+            }
+            db.SaveChanges();
+        }
     }
 }

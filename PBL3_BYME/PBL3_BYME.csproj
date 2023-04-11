@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="BLL\DatPhong_BLL.cs" />
     <Compile Include="BLL\QL_KhachHang.cs" />
+    <Compile Include="BLL\QL_LichSuDangNhap.cs" />
     <Compile Include="BLL\QL_NhanVien.cs" />
     <Compile Include="BLL\QL_TaiKhoan.cs" />
     <Compile Include="Book.cs">
@@ -148,6 +149,12 @@
     <Compile Include="VIEW\FormChonKhachHang.Designer.cs">
       <DependentUpon>FormChonKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\FormLichSuDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FormLichSuDangNhap.Designer.cs">
+      <DependentUpon>FormLichSuDangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\FormQLHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FormBaoCao.resx">
       <DependentUpon>FormBaoCao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FormLichSuDangNhap.resx">
+      <DependentUpon>FormLichSuDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FormQLHoaDon.resx">
       <DependentUpon>FormQLHoaDon.cs</DependentUpon>

@@ -87,12 +87,13 @@ namespace PBL3_BYME.BLL
         // tu dong lay 1 IdChiTietBook
         public string GetNewIDCTB()
         {
+            int idtt = 0;
             List<string> data = new List<string>();
             foreach (var i in db.ChiTietBooks.Select(p => p).OrderBy(p => p.IdChiTietBook))
             {
-                data.Add(i.IdChiTietBook.Substring(1));
+                idtt++;
             }
-            int idtt = Convert.ToInt32(data.Select(v => int.Parse(v)).Max()) + 1;
+             idtt++;
             return "CTB" + idtt.ToString();
         }
 

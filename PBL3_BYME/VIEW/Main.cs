@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PBL3_BYME.DTO;
 using PBL3_BYME.BLL;
+using PBL3_BYME.VIEW;
+
 namespace PBL3_BYME
 {
     public partial class Main : Form
@@ -126,8 +128,8 @@ namespace PBL3_BYME
         }
 
         private void button9_Click(object sender, EventArgs e)
-        {
-
+        {          
+            OpenChildForm(new FormLichSuDangNhap());
         }
         private void OpenChildForm(Form childForm)
         {
@@ -150,6 +152,11 @@ namespace PBL3_BYME
         private void button8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            MenuUser.Show(pictureBox3, pictureBox3.Width, 0);
         }
     }
 }

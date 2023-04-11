@@ -15,6 +15,7 @@ namespace PBL3_BYME
     public partial class LoginForm : Form
     {
         private string Id { get; set; }
+        private QL_LichSuDangNhap qlls = new QL_LichSuDangNhap();
         public LoginForm()
         {
             InitializeComponent();
@@ -71,13 +72,15 @@ namespace PBL3_BYME
                         break;
                     }
                 }
-                
+                qlls.addLichSu(Id, true);
+                ql.updateTrangThaiTK(textBox1.Text);
                 this.Hide();
                 Main main = new Main(Id);
                 main.ShowDialog();
 
                 main = null;
                 this.Show();
+                textBox2.Text = "";
             }
             else
             {

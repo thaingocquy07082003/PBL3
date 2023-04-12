@@ -9,6 +9,19 @@ namespace PBL3_BYME.BLL
     public class QL_KhachHang
     {
         private QLKSEntities db = new QLKSEntities();
+        private static QL_KhachHang _Instance;
+        public static QL_KhachHang Instance
+        {
+            get
+            {
+                if (_Instance == null)
+                {
+                    _Instance = new QL_KhachHang();
+                }
+                return _Instance;
+            }
+            set { }
+        }
         // Lay tat ca khach hang trong csdl tra ve 1 list cac KhachHangView
         public List<KhachHangView> getAllKhachHang()
         {
@@ -107,7 +120,61 @@ namespace PBL3_BYME.BLL
             db.KhachHangs.Add(a);
             db.SaveChanges();
         }
+        // Kiem tra khach hang ton tai chua
+        public KhachHang findKhachHangById(string id)
+        {
+            var query = db.KhachHangs.Select(p => p).ToList();
+            foreach (var item in query)
+            {
+                if (id == item.IdKhachHang)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+        // ADD va edit khach hang
+        public void addOrUpdate(KhachHang khachHang)
+        {
+            if (findKhachHangById(khachHang.IdKhachHang) != null)
+            {
+                var t = db.KhachHangs.Where(p => p.IdKhachHang == khachHang.IdKhachHang).FirstOrDefault();
+                t.CMND = khachHang.CMND;
+                t.SDT = khachHang.SDT;
+                t.Ten = khachHang.Ten;
+                t.GioiTinh = khachHang.GioiTinh;
+                t.GhiChu = khachHang.GhiChu;
+                t.QuocTich = khachHang.QuocTich;
+                db.SaveChanges();
+            }
+            else
+            {
+                db.KhachHangs.Add(khachHang);
+                db.SaveChanges();
+            }
+        }
+        //Xoa khach hang
+        public void delete(string id)
+        {
+            foreach (KhachHang i in db.KhachHangs.ToList())
+            {
+                if (i.IdKhachHang == id)
+                {
+                    try
+                    {
+                        db.KhachHangs.Remove(i);
+                        db.SaveChanges();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                    }
 
-        
+                }
+            }
+        }
+
+
+
     }
 }

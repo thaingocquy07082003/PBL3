@@ -58,6 +58,7 @@
     <Compile Include="BLL\QLKhachHang_BLL.cs" />
     <Compile Include="BLL\QL_KhachHang.cs" />
     <Compile Include="BLL\QL_NhanVien.cs" />
+    <Compile Include="BLL\QL_TaiKhoan.cs" />
     <Compile Include="Books.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
@@ -145,6 +146,12 @@
     </Compile>
     <Compile Include="VIEW\FormChonKhachHang.Designer.cs">
       <DependentUpon>FormChonKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\FormLichSuDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\FormLichSuDangNhap.Designer.cs">
+      <DependentUpon>FormLichSuDangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\FormQLHoaDon.cs">
       <SubType>Form</SubType>

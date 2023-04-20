@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Common.CommandTrees;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,19 +10,6 @@ namespace PBL3_BYME.BLL
     public class QL_KhachHang
     {
         private QLKSEntities db = new QLKSEntities();
-        private static QL_KhachHang _Instance;
-        public static QL_KhachHang Instance
-        {
-            get
-            {
-                if (_Instance == null)
-                {
-                    _Instance = new QL_KhachHang();
-                }
-                return _Instance;
-            }
-            set { }
-        }
         // Lay tat ca khach hang trong csdl tra ve 1 list cac KhachHangView
         public List<KhachHangView> getAllKhachHang()
         {
@@ -38,7 +26,8 @@ namespace PBL3_BYME.BLL
                     GioiTinh = gt,
                     CMND = i.CMND,
                     SDT = i.SDT,
-                    QuocTich = i.QuocTich,                  
+                    QuocTich = i.QuocTich,
+                    GhiChu = i.GhiChu,
 
                 });
             }
@@ -173,8 +162,29 @@ namespace PBL3_BYME.BLL
                 }
             }
         }
-
-
+        public List<KhachHangView> getKhachHangByTen(string Ten)
+        {
+            List<KhachHangView> data = new List<KhachHangView>();
+            foreach (var i in db.KhachHangs.Select(p => p))
+            {
+                if (i.Ten == Ten)
+                {
+                    string gt = "Nam";
+                    if (i.GioiTinh == false) gt = "Nữ";
+                    data.Add(new KhachHangView
+                    {
+                        IdKhachHang = i.IdKhachHang,
+                        Ten = i.Ten,
+                        GioiTinh = gt,
+                        CMND = i.CMND,
+                        SDT = i.SDT,
+                        QuocTich = i.QuocTich,
+                        GhiChu=i.GhiChu,
+                    });
+                }
+            }
+            return data;
+        }
 
     }
 }

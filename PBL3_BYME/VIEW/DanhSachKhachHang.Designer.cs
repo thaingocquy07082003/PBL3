@@ -239,22 +239,24 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 24);
             this.comboBox2.TabIndex = 20;
+            this.comboBox2.SelectedValueChanged += new System.EventHandler(this.comboBox2_SelectedValueChanged);
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(720, 32);
+            this.textBox7.Location = new System.Drawing.Point(792, 32);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(230, 22);
+            this.textBox7.Size = new System.Drawing.Size(272, 22);
             this.textBox7.TabIndex = 21;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(989, 28);
+            this.button4.Location = new System.Drawing.Point(1070, 26);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(125, 30);
             this.button4.TabIndex = 22;
             this.button4.Text = "Tìm Kiếm";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // dataGridView1
             // 

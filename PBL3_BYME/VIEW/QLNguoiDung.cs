@@ -38,7 +38,7 @@ namespace PBL3_BYME
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
             string Mode = comboBox3.SelectedIndex.ToString();
-
+            dataGridView1.DataSource = qlnv.Sort(Mode);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -58,6 +58,15 @@ namespace PBL3_BYME
         {
             string name = textBox8.Text;
             dataGridView1.DataSource = qlnv.GetNVByName(name);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+
+            }
+
         }
     }
 }

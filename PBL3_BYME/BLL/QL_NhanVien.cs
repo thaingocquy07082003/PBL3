@@ -40,18 +40,41 @@ namespace PBL3_BYME.BLL
             return nhanViens;
         }
 
-        // Sap xep theo danh sach Ma Nhan vien cho trc
+        // Sap xep 
         public List<NhanVien> Sort(string Mode)
         {
             List<NhanVien> data = new List<NhanVien>();         
             if(Mode == "Ten")
             {
-                //data.AddRange(db.NhanViens.))
+                data.AddRange(db.NhanViens.OrderBy(p => p.Ten).ToArray());
+            }
+            else
+            {
+                data.AddRange(db.NhanViens.OrderBy(p => p.IdNhanVien).ToArray());
             }
             return data;
         }
-        
-         
-       
+
+        // Xoa nhan vien
+        public void delete(string id)
+        {
+            foreach (NhanVien i in db.NhanViens.ToList())
+            {
+                if (i.IdNhanVien == id)
+                {
+                    try
+                    {
+                        db.NhanViens.Remove(i);
+                        db.SaveChanges();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                    }
+
+                }
+            }
+        }
+
     }
 }

@@ -33,7 +33,7 @@ namespace PBL3_BYME.BLL
         }
 
 
-        // Check thong tin tai khoan co hop le de dang nhap hay ko
+        // Check thong tin tai khoan co ton tai hay ko ?
         public bool Check(string tk, string pass)
         {
             List<TaiKhoan> list = new List<TaiKhoan>();
@@ -92,6 +92,37 @@ namespace PBL3_BYME.BLL
                 }
             }
             db.SaveChanges();
+        }
+
+        // ADD Tai Khoan
+        public void ADD(TaiKhoan tk )
+        {
+            db.TaiKhoans.Add(tk);
+            db.SaveChanges();
+        }
+
+        // Delete Tai Khoan
+        public void DELETE(TaiKhoan i)
+        {
+            db.TaiKhoans.Remove(i);
+            db.SaveChanges();
+        }
+
+        // UPDATE Tai khoan 
+        public void UPDATE(TaiKhoan tk)
+        {
+            try
+            {
+                TaiKhoan t = db.TaiKhoans.Where(p => p.IdTaiKhoan == tk.IdTaiKhoan).FirstOrDefault();
+                t.TenDangNhap = tk.TenDangNhap;
+                t.MatKhau = tk.MatKhau;
+                t.TrangThai = tk.TrangThai;
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

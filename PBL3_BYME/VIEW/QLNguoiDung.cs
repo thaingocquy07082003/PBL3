@@ -64,8 +64,34 @@ namespace PBL3_BYME
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-
+                foreach(DataGridViewRow i in dataGridView1.SelectedRows)
+                {
+                    qlnv.delete(i.Cells["IdNhanVien"].Value.ToString());
+                }
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewRow row = dataGridView1.SelectedRows[0];
+            textBox1.Text = row.Cells["IdNhanVien"].Value.ToString();
+            textBox2.Text = row.Cells["Ten"].Value.ToString();
+            textBox3.Text= row.Cells["CMND"].Value.ToString();
+            textBox4.Text = row.Cells["SDT"].Value.ToString();
+            if (Convert.ToBoolean(row.Cells["GioiTinh"].Value) == true)
+            {
+                comboBox1.SelectedIndex = 0;
+            }
+            else
+            {
+                comboBox1.SelectedIndex = 1;
+            }
+            textBox5.Text = row.Cells["DiaChi"].Value.ToString();
 
         }
     }

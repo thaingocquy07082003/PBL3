@@ -33,14 +33,10 @@ namespace PBL3_BYME.BLL
         }
 
 
-        // Check thong tin tai khoan co ton tai hay ko ?
+        // Check thong tin tai khoan co ton tai hay ko a xu li Add hoac update ?
         public bool Check(string tk, string pass)
         {
             List<TaiKhoan> list = new List<TaiKhoan>();
-            foreach(var i in db.TaiKhoans.ToList())
-            {
-                list.Add(i);
-            }
             foreach(TaiKhoan t in list)
             {
                 if(t.TenDangNhap == tk && t.MatKhau == pass)
@@ -123,6 +119,12 @@ namespace PBL3_BYME.BLL
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        // Lay thong tin tai khoan theo IdTaiKhoan
+        public TaiKhoan GetTaiKhoanById(string id)
+        {
+            return db.TaiKhoans.Select(p => p).Where(p => p.IdTaiKhoan == id).FirstOrDefault();
         }
     }
 }

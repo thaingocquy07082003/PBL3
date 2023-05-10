@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.Layout;
 
 namespace PBL3_BYME.BLL
 {
@@ -116,6 +117,26 @@ namespace PBL3_BYME.BLL
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        // Lay Id chuc vu theo ten chuc vu 
+        public string GetIdChuvu(string tencv)
+        {
+            return db.ChucVus.Select(p => p.IdChucVu).Where(p => p.Equals(tencv)).FirstOrDefault().ToString();
+        }
+
+        //Lay ten chuc vu theo Id chuc vu
+        public string GetTenCV(string idcv)
+        {
+            string ten = "";
+            foreach(ChucVu i in db.ChucVus.ToList())
+            {
+                if(i.IdChucVu == idcv)
+                {
+                    ten = i.IdChucVu;
+                }
+            }
+            return ten;
         }
     }
 }

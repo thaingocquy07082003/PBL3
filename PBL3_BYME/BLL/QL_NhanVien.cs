@@ -47,7 +47,10 @@ namespace PBL3_BYME.BLL
             List<NhanVien> data = new List<NhanVien>();
             if (Mode == "Ten")
             {
-                data.AddRange(db.NhanViens.OrderBy(p => p.Ten).ToArray());
+                foreach(NhanVien i in db.NhanViens.OrderBy(p => p.Ten).ToList())
+                {
+                    data.Add(i);
+                }
             }
             else
             {
@@ -122,7 +125,15 @@ namespace PBL3_BYME.BLL
         // Lay Id chuc vu theo ten chuc vu 
         public string GetIdChuvu(string tencv)
         {
-            return db.ChucVus.Select(p => p.IdChucVu).Where(p => p.Equals(tencv)).FirstOrDefault().ToString();
+            string id = "";
+            foreach(ChucVu i in db.ChucVus.ToList())
+            {
+                if(i.TenChucVu == tencv)
+                {
+                    id = i.IdChucVu;
+                }
+            }
+            return id;
         }
 
         //Lay ten chuc vu theo Id chuc vu
@@ -133,7 +144,7 @@ namespace PBL3_BYME.BLL
             {
                 if(i.IdChucVu == idcv)
                 {
-                    ten = i.IdChucVu;
+                    ten = i.TenChucVu.ToString();
                 }
             }
             return ten;

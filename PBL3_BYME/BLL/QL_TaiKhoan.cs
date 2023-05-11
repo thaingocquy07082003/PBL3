@@ -37,7 +37,7 @@ namespace PBL3_BYME.BLL
         public bool Check(string tk, string pass)
         {
             List<TaiKhoan> list = new List<TaiKhoan>();
-            foreach(TaiKhoan t in list)
+            foreach(TaiKhoan t in db.TaiKhoans.ToList())
             {
                 if(t.TenDangNhap == tk && t.MatKhau == pass)
                 {

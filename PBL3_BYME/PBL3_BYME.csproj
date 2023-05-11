@@ -60,6 +60,7 @@
     <Compile Include="BLL\QL_LichSuDangNhap.cs" />
     <Compile Include="BLL\QL_NhanVien.cs" />
     <Compile Include="BLL\QL_TaiKhoan.cs" />
+    <Compile Include="BLL\Tim_Phong.cs" />
     <Compile Include="Book.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>

@@ -19,11 +19,10 @@ namespace PBL3_BYME
         {
             InitializeComponent();
             Display();
+            SetCBB();
         }
-
-        public void Display()
+        public void SetCBB()
         {
-            dataGridView1.DataSource = qlnv.GetAllNhanVien();
             comboBox1.Items.Add("Nam");
             comboBox1.Items.Add("Nu");
             // setup cho cbb2
@@ -32,6 +31,11 @@ namespace PBL3_BYME
             comboBox3.Items.Add("Ten");
             comboBox3.Items.Add("Ma Nhan Vien");
         }
+
+        public void Display()
+        {
+            dataGridView1.DataSource = qlnv.GetAllNhanVien();
+        }
         private void label11_Click(object sender, EventArgs e)
         {
 
@@ -39,7 +43,7 @@ namespace PBL3_BYME
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string Mode = comboBox3.SelectedIndex.ToString();
+            string Mode = comboBox3.SelectedItem.ToString();
             dataGridView1.DataSource = qlnv.Sort(Mode);
         }
 
@@ -71,6 +75,7 @@ namespace PBL3_BYME
                     qlnv.delete(i.Cells["IdNhanVien"].Value.ToString());
                 }
             }
+            Display();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -94,16 +99,16 @@ namespace PBL3_BYME
                 comboBox1.SelectedIndex = 1;
             }
             textBox5.Text = row.Cells["DiaChi"].Value.ToString();
-            int index = comboBox1.FindStringExact(qlnv.GetTenCV(row.Cells["IdChucVu"].Value.ToString()));
+            int index = comboBox2.FindStringExact(qlnv.GetTenCV(row.Cells["IdChucVu"].Value.ToString()));
             if (index != -1)
             {
-                comboBox1.SelectedIndex = index;
+                comboBox2.SelectedIndex = index;
             }
             dateTimePicker1.Value = Convert.ToDateTime(row.Cells["NgayVaoLam"].Value);
             string idtk = row.Cells["IdTaiKhoan"].Value.ToString();
             textBox9.Text = idtk;
-            textBox7.Text = qltk.GetTaiKhoanById(idtk).TenDangNhap.ToString();
-            textBox8.Text = qltk.GetTaiKhoanById(idtk).MatKhau.ToString();
+            textBox6.Text = qltk.GetTaiKhoanById(idtk).TenDangNhap.ToString();
+            textBox7.Text = qltk.GetTaiKhoanById(idtk).MatKhau.ToString();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -154,6 +159,7 @@ namespace PBL3_BYME
                         qlnv.ADD(nv);
                     }
                 }
+                Display();
             }
             else
             {
@@ -195,12 +201,13 @@ namespace PBL3_BYME
                 // Code xử lý khi người dùng chọn Yes
                 if (qltk.Check(tk.TenDangNhap, tk.MatKhau) == true)
                 {
-                    MessageBox.Show("Tai Khoan cua ban da ton tai xin vui long them moi tai khoan khac!");
+                    qltk.UPDATE(tk);
+                    qlnv.UPDATE(nv);
+                    Display();
                 }
                 else
                 {
-                    qltk.UPDATE(tk);
-                    qlnv.UPDATE(nv);
+                    
                 }
             }
             else

@@ -49,6 +49,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button11 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -62,9 +63,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.ChecIn);
-            this.groupBox1.Location = new System.Drawing.Point(124, 38);
+            this.groupBox1.Location = new System.Drawing.Point(191, 49);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(788, 134);
+            this.groupBox1.Size = new System.Drawing.Size(784, 134);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thời Gian";
@@ -115,9 +116,9 @@
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(124, 234);
+            this.panel1.Location = new System.Drawing.Point(191, 277);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(788, 248);
+            this.panel1.Size = new System.Drawing.Size(784, 221);
             this.panel1.TabIndex = 1;
             // 
             // button10
@@ -226,7 +227,7 @@
             this.groupBox2.Controls.Add(this.pictureBox2);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.pictureBox1);
-            this.groupBox2.Location = new System.Drawing.Point(379, 518);
+            this.groupBox2.Location = new System.Drawing.Point(462, 599);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(219, 100);
             this.groupBox2.TabIndex = 2;
@@ -271,12 +272,23 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button11.Location = new System.Drawing.Point(536, 205);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(105, 31);
+            this.button11.TabIndex = 3;
+            this.button11.Text = "Tìm";
+            this.button11.UseVisualStyleBackColor = false;
+            // 
             // TimPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1031, 631);
+            this.ClientSize = new System.Drawing.Size(1166, 768);
+            this.Controls.Add(this.button11);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
@@ -316,5 +328,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button11;
     }
 }

@@ -225,7 +225,7 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(162, 529);
+            this.textBox7.Location = new System.Drawing.Point(162, 532);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(256, 22);
             this.textBox7.TabIndex = 19;
@@ -241,7 +241,7 @@
             // 
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(424, 523);
+            this.pictureBox1.Location = new System.Drawing.Point(434, 526);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(46, 28);
             this.pictureBox1.TabIndex = 21;
@@ -287,10 +287,8 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Enabled = false;
             this.dataGridView1.Location = new System.Drawing.Point(519, 75);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

@@ -12,8 +12,7 @@ namespace PBL3_BYME.BLL
         public List<DateTime> setNgay(string idphong)
         {
             
-            List<DateTime> data = new List<DateTime>();
-            // string idphong = "1P1";
+            List<DateTime> data = new List<DateTime>();           
             var c = db.PHONGs.Find(idphong);
             foreach (var item in c.ChiTietThuePhongs)
             {

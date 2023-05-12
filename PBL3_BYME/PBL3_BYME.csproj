@@ -195,6 +195,12 @@
     <Compile Include="VIEW\QLNguoiDung.Designer.cs">
       <DependentUpon>QLNguoiDung.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\ThongTinTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\ThongTinTaiKhoan.Designer.cs">
+      <DependentUpon>ThongTinTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\TimPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
     </Compile>
     <EmbeddedResource Include="VIEW\QLNguoiDung.resx">
       <DependentUpon>QLNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\ThongTinTaiKhoan.resx">
+      <DependentUpon>ThongTinTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\TimPhong.resx">
       <DependentUpon>TimPhong.cs</DependentUpon>

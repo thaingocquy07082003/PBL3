@@ -38,10 +38,12 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -98,7 +100,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Menu;
+            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
             this.textBox1.Location = new System.Drawing.Point(516, 252);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(251, 22);
@@ -107,12 +109,13 @@
             // 
             // textBox2
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Menu;
+            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
             this.textBox2.Location = new System.Drawing.Point(516, 330);
             this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(251, 22);
             this.textBox2.TabIndex = 6;
+            this.textBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox5_MouseDown);
+            this.textBox2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox5_MouseUp);
             // 
             // pictureBox4
             // 
@@ -134,12 +137,26 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.SystemColors.Window;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(773, 321);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(36, 31);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox5.TabIndex = 9;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox5_MouseDown);
+            this.pictureBox5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox5_MouseUp);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(803, 440);
+            this.ClientSize = new System.Drawing.Size(840, 440);
+            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.textBox2);
@@ -155,6 +172,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,6 +189,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
 

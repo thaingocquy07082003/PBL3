@@ -109,6 +109,7 @@ namespace PBL3_BYME
             textBox9.Text = idtk;
             textBox6.Text = qltk.GetTaiKhoanById(idtk).TenDangNhap.ToString();
             textBox7.Text = qltk.GetTaiKhoanById(idtk).MatKhau.ToString();
+            textBox7.UseSystemPasswordChar = true;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -214,6 +215,21 @@ namespace PBL3_BYME
             {
                 // Code xử lý khi người dùng chọn No
             }
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            textBox7.UseSystemPasswordChar = false;
+        }
+
+        private void textBox7_MouseUp(object sender, MouseEventArgs e)
+        {
+            textBox7.UseSystemPasswordChar = true;
+        }
+
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            textBox7.UseSystemPasswordChar = true;
         }
     }
 }

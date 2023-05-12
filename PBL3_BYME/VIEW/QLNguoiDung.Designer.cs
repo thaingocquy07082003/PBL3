@@ -229,6 +229,7 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(256, 22);
             this.textBox7.TabIndex = 19;
+            this.textBox7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.textBox7_MouseUp);
             // 
             // dateTimePicker1
             // 
@@ -246,6 +247,8 @@
             this.pictureBox1.Size = new System.Drawing.Size(46, 28);
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
             // comboBox3
             // 

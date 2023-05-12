@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PBL3_BYME.BLL;
 using PBL3_BYME.DTO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PBL3_BYME
 {
@@ -86,6 +87,16 @@ namespace PBL3_BYME
             {
                 MessageBox.Show("Tai Khoan Hoac Mat Khau sai vui long thu lai !");
             }
+        }
+
+        private void pictureBox5_MouseDown(object sender, MouseEventArgs e)
+        {
+            textBox2.UseSystemPasswordChar = false;
+        }
+
+        private void pictureBox5_MouseUp(object sender, MouseEventArgs e)
+        {
+            textBox2.UseSystemPasswordChar = true;
         }
     }
 }

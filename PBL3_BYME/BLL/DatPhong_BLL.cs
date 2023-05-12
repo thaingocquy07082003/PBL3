@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PBL3_BYME.DTO;
 namespace PBL3_BYME.BLL
 {
     public class DatPhong_BLL
@@ -135,6 +134,46 @@ namespace PBL3_BYME.BLL
                 db.ChiTietBooks.Add(i);
             }
             db.SaveChanges();
+        }
+
+        // Check Ngay check in , check out 
+        public bool Check(string idphong, DateTime dateTimePicker1, DateTime dateTimePicker2)
+        {
+            Tim_Phong tim = new Tim_Phong();
+            List<DateTime> data = tim.setNgay(idphong);
+
+            TimeSpan Time = dateTimePicker2.Date - dateTimePicker1.Date;
+            int songay = Time.Days;
+            if (songay < 0) return false;
+            DateTime temp = dateTimePicker1;
+            for (int i = 0; i <= songay; i++)
+            {
+                DateTime ngay = temp.AddDays(+i);
+                foreach (DateTime d in data)
+                {
+                    if (d.Date == ngay.Date && d.Month == ngay.Month && d.Year == ngay.Year)
+                    {
+                        return false;
+                    }
+
+                }
+            }
+            return true;
+        }
+
+        // Lay cac phong
+        public List<CBBItemPhong> getAllPhong()
+        {
+            List<CBBItemPhong> data = new List<CBBItemPhong>();
+            foreach (var i in db.PHONGs.Select(p => p))
+            {
+                data.Add(new CBBItemPhong
+                {
+                    Value = i.IdPhong,
+                    Text = i.TenPhong,
+                });
+            }
+            return data;
         }
     }
 }

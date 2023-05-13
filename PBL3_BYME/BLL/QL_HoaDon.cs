@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
+using System.Windows.Forms;
 
 namespace PBL3_BYME.BLL
 {
@@ -213,5 +214,63 @@ namespace PBL3_BYME.BLL
             db.HoaDons.Remove(record);
             db.SaveChanges();
         }
+
+        // Lay Id Vat dung ten loai vat dung
+        public string GetIDVatDung(string name)
+        {
+            string id = "";
+            foreach(LoaiVatDung i in db.LoaiVatDungs.ToList())
+            {
+                if(i.TenVatDung == name)
+                {
+                    id = i.IdLoaiVatDung;
+                }
+            }
+            return id;
+        }
+
+        // Lay Id Khach Hang
+        public string GetIDKhachHang(string name)
+        {
+            string id = "";
+            foreach (KhachHang i in db.KhachHangs.ToList())
+            {
+                if (i.Ten == name)
+                {
+                    id = i.IdKhachHang;
+                }
+            }
+            return id;
+        }
+
+        // Lay Id Nhan Vien
+        public string GetIDNhanVien(string name)
+        {
+            string id = "";
+            foreach (NhanVien i in db.NhanViens.ToList())
+            {
+                if (i.Ten == name)
+                {
+                    id = i.IdNhanVien;
+                }
+            }
+            return id;
+        }
+        // Lay Id Phong
+        // Lay Id Nhan Vien
+        public string GetIDPhong(string name)
+        {
+            string id = "";
+            foreach (PHONG i in db.PHONGs.ToList())
+            {
+                if (i.TenPhong == name)
+                {
+                    id = i.IdPhong;
+                }
+            }
+            return id;
+        }
+
+
     }
 }

@@ -14,6 +14,7 @@ namespace PBL3_BYME
     public partial class FormQLHoaDon : Form
     {
         private QL_HoaDon qlhd = new QL_HoaDon();
+        private QL_KhachHang qlkh = new QL_KhachHang();
         public FormQLHoaDon()
         {
             InitializeComponent();
@@ -70,15 +71,15 @@ namespace PBL3_BYME
 
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                qlhd.delete(txtIDHoaDon.Text);
-                dataGridView1.DataSource = qlhd.getAllHoaDon();
-                MessageBox.Show("Removed");
-            }
-        }
+        //private void btnXoa_Click(object sender, EventArgs e)
+        //{
+        //    if (dataGridView1.SelectedRows.Count > 0)
+        //    {
+        //        qlhd.delete(txtIDHoaDon.Text);
+        //        dataGridView1.DataSource = qlhd.getAllHoaDon();
+        //        MessageBox.Show("Removed");
+        //    }
+        //}
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -87,8 +88,21 @@ namespace PBL3_BYME
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            qlhd.ThemHoaDon(cbPhong.SelectedValue.ToString(), cbVD.SelectedValue.ToString(), Convert.ToInt32(txtSoLuong.Text), txtIDHoaDon.Text, cbKH.SelectedValue.ToString(), cbNV.SelectedValue.ToString(), dtpNgayHoaDon.Value, true, txtGhiChu.Text, Convert.ToDecimal(txtTienTraTrc2.Text));
-            dataGridView1.DataSource = qlhd.getAllHoaDon();
+            object IdHoaDon = txtIDHoaDon.Text;
+            object IdKhachHang = cbKH.SelectedValue.ToString();
+            object IdNhanVien = cbNV.SelectedValue.ToString();
+            object NgayHoaDon = dtpNgayHoaDon.Value;
+            object TinhTrang = txtTinhTrang.Text;
+            object GhiChu = txtGhiChu.Text;
+            object TienTraTruoc = txtTienTraTrc2.Text;
+            object IdPhong = cbPhong.SelectedValue.ToString();
+            object IdVatDung = cbVD.SelectedValue.ToString();
+            object Soluong = txtSoLuong.Text;
+
+            qlhd.ThemHoaDon(IdPhong.ToString(),IdVatDung.ToString(),Convert.ToInt32(Soluong),IdHoaDon.ToString(),IdKhachHang.ToString(),IdNhanVien.ToString(),Convert.ToDateTime(NgayHoaDon),Convert.ToBoolean(TinhTrang),GhiChu.ToString(),Convert.ToDecimal(TienTraTruoc));
+            Display();
+            //qlhd.ThemHoaDon(qlhd.GetIDPhong(cbPhong.SelectedValue.ToString()),cbVD.SelectedValue.ToString(), Convert.ToInt32(txtSoLuong.Text), txtIDHoaDon.Text, qlhd.GetIDKhachHang(cbKH.SelectedItem.ToString()), qlhd.GetIDNhanVien(cbNV.SelectedItem.ToString()), Convert.ToDateTime(dtpNgayHoaDon.Value), true, txtGhiChu.Text, Convert.ToDecimal(txtTienTraTrc2.Text));
+            //dataGridView1.DataSource = qlhd.getAllHoaDon();
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -132,6 +146,16 @@ namespace PBL3_BYME
 
                 // Set the DataTable object as the DataSource of the DataGridView2 control to display the selected row data in DataGridView2
                 dataGridView2.DataSource = table;
+            }
+        }
+
+        private void btnXoa_Click_1(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                qlhd.delete(txtIDHoaDon.Text);
+                dataGridView1.DataSource = qlhd.getAllHoaDon();
+                MessageBox.Show("Removed");
             }
         }
     }

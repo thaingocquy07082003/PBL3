@@ -162,5 +162,10 @@ namespace PBL3_BYME
         {
             ThongTinTaiKhoan tttk = new ThongTinTaiKhoan(IDNhanVien);
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormQLPhong());
+        }
     }
 }

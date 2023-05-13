@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnThem = new System.Windows.Forms.Button();
             this.cbVD = new System.Windows.Forms.ComboBox();
             this.cbPhong = new System.Windows.Forms.ComboBox();
             this.cbNV = new System.Windows.Forms.ComboBox();
             this.cbKH = new System.Windows.Forms.ComboBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.txtIDHoaDon = new System.Windows.Forms.TextBox();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.txtTinhTrang = new System.Windows.Forms.TextBox();
@@ -55,7 +55,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.btnThem = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -64,6 +64,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Controls.Add(this.cbVD);
             this.groupBox1.Controls.Add(this.cbPhong);
@@ -71,7 +72,6 @@
             this.groupBox1.Controls.Add(this.cbKH);
             this.groupBox1.Controls.Add(this.txtSoLuong);
             this.groupBox1.Controls.Add(this.txtIDHoaDon);
-            this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.txtGhiChu);
             this.groupBox1.Controls.Add(this.txtTinhTrang);
@@ -92,6 +92,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Hóa Đơn";
+            // 
+            // btnThem
+            // 
+            this.btnThem.Location = new System.Drawing.Point(50, 544);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(67, 31);
+            this.btnThem.TabIndex = 22;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // cbVD
             // 
@@ -139,19 +149,9 @@
             this.txtIDHoaDon.Size = new System.Drawing.Size(156, 22);
             this.txtIDHoaDon.TabIndex = 16;
             // 
-            // btnXoa
-            // 
-            this.btnXoa.Location = new System.Drawing.Point(228, 544);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(76, 32);
-            this.btnXoa.TabIndex = 15;
-            this.btnXoa.Text = "Xoá ";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(122, 544);
+            this.btnSua.Location = new System.Drawing.Point(137, 544);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(72, 32);
             this.btnSua.TabIndex = 14;
@@ -324,15 +324,16 @@
             this.dataGridView2.TabIndex = 4;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // btnThem
+            // btnXoa
             // 
-            this.btnThem.Location = new System.Drawing.Point(33, 544);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(67, 31);
-            this.btnThem.TabIndex = 22;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            this.btnXoa.Location = new System.Drawing.Point(232, 544);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(72, 32);
+            this.btnXoa.TabIndex = 23;
+            this.btnXoa.Tag = "";
+            this.btnXoa.Text = "Xoá";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click_1);
             // 
             // FormQLHoaDon
             // 
@@ -359,7 +360,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.TextBox txtGhiChu;
         private System.Windows.Forms.TextBox txtTinhTrang;
@@ -386,5 +386,6 @@
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.TextBox txtIDHoaDon;
         private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnXoa;
     }
 }

@@ -103,10 +103,6 @@ namespace PBL3_BYME
                     {
                         tmp.delete(i.Cells["IdKhachHang"].Value.ToString());
                     }
-                    else
-                    {
-
-                    }
                 }
             }
             showKH();
@@ -162,6 +158,11 @@ namespace PBL3_BYME
             string ten=textBox7.Text.ToString();
             data = tmp.getKhachHangByTen(ten);
             dataGridView1.DataSource=data;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

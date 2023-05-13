@@ -206,13 +206,16 @@ namespace PBL3_BYME.BLL
                 throw new Exception($"Không tìm thấy hóa đơn có id: {idhoadon}");
             }
         }
-        //Xoa khach hang
+        ////xoa khach hang
         public void delete(string id)
         {
             var record = db.HoaDons.FirstOrDefault(x => x.IdHoaDon == id);
-
             db.HoaDons.Remove(record);
             db.SaveChanges();
+
+            var record1 = db.LamHus.FirstOrDefault(x => x.IdHoaDon == id);
+            db.LamHus.Remove(record1);
+            db.SaveChanges();   
         }
 
         // Lay Id Vat dung ten loai vat dung

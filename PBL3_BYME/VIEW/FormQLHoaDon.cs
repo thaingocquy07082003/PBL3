@@ -149,7 +149,7 @@ namespace PBL3_BYME
             }
         }
 
-        private void btnXoa_Click_1(object sender, EventArgs e)
+        private void btnXoa_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
@@ -158,5 +158,15 @@ namespace PBL3_BYME
                 MessageBox.Show("Removed");
             }
         }
+
+        //private void btnXoa_Click_1(object sender, EventArgs e)
+        //{
+        //    if (dataGridView1.SelectedRows.Count > 0)
+        //    {
+        //        qlhd.delete(txtIDHoaDon.Text);
+        //        dataGridView1.DataSource = qlhd.getAllHoaDon();
+        //        MessageBox.Show("Removed");
+        //    }
+        //}
     }
 }

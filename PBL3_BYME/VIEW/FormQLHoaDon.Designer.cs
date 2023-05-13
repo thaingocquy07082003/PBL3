@@ -95,7 +95,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(50, 544);
+            this.btnThem.Location = new System.Drawing.Point(53, 544);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(67, 31);
             this.btnThem.TabIndex = 22;
@@ -151,9 +151,9 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(137, 544);
+            this.btnSua.Location = new System.Drawing.Point(149, 543);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(72, 32);
+            this.btnSua.Size = new System.Drawing.Size(55, 32);
             this.btnSua.TabIndex = 14;
             this.btnSua.Tag = "";
             this.btnSua.Text = "Sửa";
@@ -326,14 +326,14 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(232, 544);
+            this.btnXoa.Location = new System.Drawing.Point(226, 543);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(72, 32);
+            this.btnXoa.Size = new System.Drawing.Size(55, 32);
             this.btnXoa.TabIndex = 23;
             this.btnXoa.Tag = "";
             this.btnXoa.Text = "Xoá";
             this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click_1);
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // FormQLHoaDon
             // 

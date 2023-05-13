@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BaoCao_BLL.cs" />
     <Compile Include="BLL\DatPhong_BLL.cs" />
     <Compile Include="BLL\QL_KhachHang.cs" />
     <Compile Include="BLL\QL_LichSuDangNhap.cs" />

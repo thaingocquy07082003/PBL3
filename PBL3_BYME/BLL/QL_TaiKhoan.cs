@@ -126,5 +126,19 @@ namespace PBL3_BYME.BLL
         {
             return db.TaiKhoans.Select(p => p).Where(p => p.IdTaiKhoan == id).FirstOrDefault();
         }
+
+        // Lay IdTaiKhoan voi input la 1 IdNhanVien
+        public string GetIdTaiKhoan(string idnv)
+        {
+            string idtk = "";
+            foreach(NhanVien i in db.NhanViens.ToList())
+            {
+                if(i.IdNhanVien == idnv)
+                {
+                    idtk = i.IdTaiKhoan;
+                }
+            }
+            return idtk;
+        }
     }
 }

@@ -203,8 +203,10 @@
             // 
             // textBox6
             // 
+            this.textBox6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox6.Location = new System.Drawing.Point(187, 462);
             this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(235, 22);
             this.textBox6.TabIndex = 17;
             // 
@@ -218,6 +220,7 @@
             this.button1.TabIndex = 19;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // radioButton1
             // 
@@ -251,6 +254,7 @@
             this.button2.TabIndex = 22;
             this.button2.Text = "CANCEL";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ThongTinTaiKhoan
             // 

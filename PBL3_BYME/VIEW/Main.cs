@@ -161,6 +161,7 @@ namespace PBL3_BYME
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ThongTinTaiKhoan tttk = new ThongTinTaiKhoan(IDNhanVien);
+            tttk.ShowDialog();
         }
     }
 }

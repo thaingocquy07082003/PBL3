@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PBL3_BYME.DTO;
 using PBL3_BYME.BLL;
 using PBL3_BYME.VIEW;
 
@@ -151,12 +150,17 @@ namespace PBL3_BYME
 
         private void button8_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new TimPhong());
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             MenuUser.Show(pictureBox3, pictureBox3.Width, 0);
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ThongTinTaiKhoan tttk = new ThongTinTaiKhoan(IDNhanVien);
         }
     }
 }

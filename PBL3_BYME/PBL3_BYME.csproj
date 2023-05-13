@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\DatPhong_BLL.cs" />
+    <Compile Include="BLL\QL_HoaDon.cs" />
     <Compile Include="BLL\QL_KhachHang.cs" />
     <Compile Include="BLL\QL_LichSuDangNhap.cs" />
     <Compile Include="BLL\QL_NhanVien.cs" />

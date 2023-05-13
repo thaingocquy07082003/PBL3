@@ -123,7 +123,7 @@ namespace PBL3_BYME
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new FormQLHoaDon());
         }
 
         private void button9_Click(object sender, EventArgs e)

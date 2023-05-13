@@ -293,7 +293,7 @@
             this.toolStripMenuItem3});
             this.MenuUser.Name = "MenuUser";
             this.MenuUser.ShowCheckMargin = true;
-            this.MenuUser.Size = new System.Drawing.Size(235, 104);
+            this.MenuUser.Size = new System.Drawing.Size(235, 76);
             this.MenuUser.Text = "MenuUser";
             // 
             // toolStripMenuItem1

@@ -164,7 +164,7 @@
             // button9
             // 
             this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.Location = new System.Drawing.Point(3, 507);
+            this.button9.Location = new System.Drawing.Point(0, 498);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(208, 71);
             this.button9.TabIndex = 8;
@@ -174,7 +174,7 @@
             // button8
             // 
             this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.Location = new System.Drawing.Point(3, 447);
+            this.button8.Location = new System.Drawing.Point(3, 436);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(208, 65);
             this.button8.TabIndex = 7;
@@ -184,7 +184,7 @@
             // button7
             // 
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(3, 382);
+            this.button7.Location = new System.Drawing.Point(3, 373);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(208, 68);
             this.button7.TabIndex = 6;
@@ -195,7 +195,7 @@
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.Location = new System.Drawing.Point(3, 318);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(208, 67);
+            this.button6.Size = new System.Drawing.Size(208, 65);
             this.button6.TabIndex = 5;
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -293,30 +293,33 @@
             this.toolStripMenuItem3});
             this.MenuUser.Name = "MenuUser";
             this.MenuUser.ShowCheckMargin = true;
-            this.MenuUser.Size = new System.Drawing.Size(235, 104);
+            this.MenuUser.Size = new System.Drawing.Size(239, 82);
             this.MenuUser.Text = "MenuUser";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.BackColor = System.Drawing.Color.Azure;
+            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
             this.toolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(234, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(238, 26);
             this.toolStripMenuItem1.Text = "Thông Tin Tài Khoản";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.BackColor = System.Drawing.Color.Azure;
+            this.toolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem2.Image")));
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(234, 24);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(238, 26);
             this.toolStripMenuItem2.Text = "Đổi Mật Khẩu";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.BackColor = System.Drawing.Color.Azure;
+            this.toolStripMenuItem3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem3.Image")));
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(234, 24);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(238, 26);
             this.toolStripMenuItem3.Text = "Đăng Xuất";
             // 
             // Main

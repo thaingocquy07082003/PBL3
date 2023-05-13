@@ -302,6 +302,7 @@
             // 
             // button3
             // 
+            this.button3.AutoEllipsis = true;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.Location = new System.Drawing.Point(23, 575);
             this.button3.Name = "button3";
@@ -384,6 +385,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "QLNguoiDung";
             this.Text = "QLNguoiDung";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

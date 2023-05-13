@@ -84,6 +84,8 @@ namespace PBL3_BYME
             try
             {
                 addOrUpdate(textBox1.Text);
+                //showKH();
+
             }
             catch (Exception ex)
             {

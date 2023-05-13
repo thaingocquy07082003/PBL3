@@ -294,30 +294,33 @@
             this.toolStripMenuItem3});
             this.MenuUser.Name = "MenuUser";
             this.MenuUser.ShowCheckMargin = true;
-            this.MenuUser.Size = new System.Drawing.Size(235, 76);
+            this.MenuUser.Size = new System.Drawing.Size(239, 82);
             this.MenuUser.Text = "MenuUser";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.BackColor = System.Drawing.Color.Azure;
+            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
             this.toolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(234, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(238, 26);
             this.toolStripMenuItem1.Text = "Thông Tin Tài Khoản";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.BackColor = System.Drawing.Color.Azure;
+            this.toolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem2.Image")));
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(234, 24);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(238, 26);
             this.toolStripMenuItem2.Text = "Đổi Mật Khẩu";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.BackColor = System.Drawing.Color.Azure;
+            this.toolStripMenuItem3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem3.Image")));
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(234, 24);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(238, 26);
             this.toolStripMenuItem3.Text = "Đăng Xuất";
             // 
             // Main

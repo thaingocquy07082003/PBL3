@@ -4,7 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using PBL3_BYME.DTO;
 namespace PBL3_BYME.BLL
 {
     public class QL_Phong
@@ -109,6 +109,29 @@ namespace PBL3_BYME.BLL
             {
                 throw new Exception($"Không tìm thấy phòng có id: {idPhong}");
             }
+        }
+
+        public List<Phong_View> GetPhongView()
+        {
+            List<Phong_View> data = new List<Phong_View>();
+            foreach(PHONG i in db.PHONGs.ToList())
+            {
+                foreach(LoaiPhong j in db.LoaiPhongs.ToList())
+                {
+                    if(i.IdLoaiPhong == j.IdLoaiPhong)
+                    {
+                        data.Add(new Phong_View
+                        {
+                            IdPhong = i.IdPhong,
+                            NamePhong = i.TenPhong,
+                            LoaiPhong = j.TenLoaiPhong,
+                            TrangThai = Convert.ToBoolean(i.TrangThai),
+                            GiaTien = Convert.ToString(i.DonGiaPhong)
+                        });
+                    }
+                }
+            }
+            return data;
         }
     }
 }

@@ -218,6 +218,7 @@
             this.button1.TabIndex = 19;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // radioButton1
             // 
@@ -251,6 +252,7 @@
             this.button2.TabIndex = 22;
             this.button2.Text = "CANCEL";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ThongTinTaiKhoan
             // 

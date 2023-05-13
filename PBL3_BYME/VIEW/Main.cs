@@ -109,6 +109,7 @@ namespace PBL3_BYME
             //fh = null;
             //this.Show();
             OpenChildForm(new FormHome());
+
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -161,6 +162,7 @@ namespace PBL3_BYME
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ThongTinTaiKhoan tttk = new ThongTinTaiKhoan(IDNhanVien);
+            tttk.ShowDialog();
         }
 
         private void button7_Click(object sender, EventArgs e)

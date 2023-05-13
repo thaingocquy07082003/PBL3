@@ -65,6 +65,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.LightGreen;
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -165,6 +166,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.LightGreen;
             this.groupBox3.Controls.Add(this.button5);
             this.groupBox3.Controls.Add(this.button4);
             this.groupBox3.Controls.Add(this.button3);
@@ -309,7 +311,7 @@
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button7.BackColor = System.Drawing.Color.SpringGreen;
             this.button7.Location = new System.Drawing.Point(620, 556);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(139, 55);
@@ -320,7 +322,7 @@
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button8.BackColor = System.Drawing.Color.SpringGreen;
             this.button8.Location = new System.Drawing.Point(902, 556);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(141, 55);

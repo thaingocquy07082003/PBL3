@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL3_BYME.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,12 @@ namespace PBL3_BYME
 {
     public partial class FormHome : Form
     {
+        private QL_Phong qlp = new QL_Phong();
         public FormHome()
         {
             InitializeComponent();
             SetColor();
+            Display();
         }
         public void SetColor()
         {
@@ -39,6 +42,11 @@ namespace PBL3_BYME
         {
             FormDatPhong f = new FormDatPhong();
             f.Show();
+        }
+
+        public void Display()
+        {
+            dataGridView1.DataSource = qlp.GetPhongView();
         }
     }
 }

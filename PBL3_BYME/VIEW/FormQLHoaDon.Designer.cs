@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.cbVD = new System.Windows.Forms.ComboBox();
             this.cbPhong = new System.Windows.Forms.ComboBox();
@@ -55,7 +56,6 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -64,6 +64,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Ivory;
             this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Controls.Add(this.cbVD);
@@ -92,6 +93,17 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Hóa Đơn";
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(226, 543);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(55, 32);
+            this.btnXoa.TabIndex = 23;
+            this.btnXoa.Tag = "";
+            this.btnXoa.Text = "Xoá";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -281,22 +293,26 @@
             // 
             // btnOK
             // 
+            this.btnOK.BackColor = System.Drawing.Color.GreenYellow;
+            this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOK.Location = new System.Drawing.Point(597, 544);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(111, 61);
             this.btnOK.TabIndex = 1;
             this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.GreenYellow;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(856, 545);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(112, 60);
             this.btnCancel.TabIndex = 2;
-            this.btnCancel.Text = "CANCELL";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // dataGridView1
@@ -324,21 +340,11 @@
             this.dataGridView2.TabIndex = 4;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // btnXoa
-            // 
-            this.btnXoa.Location = new System.Drawing.Point(226, 543);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(55, 32);
-            this.btnXoa.TabIndex = 23;
-            this.btnXoa.Tag = "";
-            this.btnXoa.Text = "Xoá";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
             // FormQLHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1380, 770);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);

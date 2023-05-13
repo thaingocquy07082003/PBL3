@@ -38,6 +38,12 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -114,30 +120,76 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Aqua;
             this.button1.Location = new System.Drawing.Point(60, 378);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(129, 47);
             this.button1.TabIndex = 8;
             this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.Aqua;
             this.button2.Location = new System.Drawing.Point(266, 378);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(121, 47);
             this.button2.TabIndex = 9;
             this.button2.Text = "Hủy";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Aqua;
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Location = new System.Drawing.Point(12, -1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(428, 16);
+            this.panel1.TabIndex = 10;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Aqua;
+            this.panel3.Location = new System.Drawing.Point(-1, 489);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(452, 13);
+            this.panel3.TabIndex = 11;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Aqua;
+            this.panel2.Location = new System.Drawing.Point(2, -1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(14, 503);
+            this.panel2.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(425, 14);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(14, 479);
+            this.panel4.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Aqua;
+            this.panel5.Location = new System.Drawing.Point(437, -1);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(13, 500);
+            this.panel5.TabIndex = 12;
             // 
             // FormAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(452, 450);
+            this.ClientSize = new System.Drawing.Size(452, 504);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox4);
@@ -150,6 +202,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormAdd";
             this.Text = "FormAdd";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,5 +220,10 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel5;
     }
 }

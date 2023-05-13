@@ -91,7 +91,7 @@ namespace PBL3_BYME.BLL
                 data.Add(i.IdKhachHang.Substring(1));
             }
             int idtt = Convert.ToInt32(data.Select(v => int.Parse(v)).Max()) + 1;
-            return "K" + idtt.ToString();
+            return "0" + idtt.ToString();
         }
 
         // Them Khach Hang
@@ -104,7 +104,7 @@ namespace PBL3_BYME.BLL
                 CMND = cmnd,
                 QuocTich = quoctich,
                 SDT = sdt,
-
+                GioiTinh = true
             };
             db.KhachHangs.Add(a);
             db.SaveChanges();

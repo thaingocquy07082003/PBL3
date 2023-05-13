@@ -23,6 +23,7 @@ namespace PBL3_BYME.VIEW
         {
             InitializeComponent();
             IdNV = idnv;
+            Display();
         }
 
 
@@ -69,7 +70,17 @@ namespace PBL3_BYME.VIEW
             }
             else if(radioButton2.Checked == true)
             {
-
+                nv.GioiTinh = false;
+            }
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn tiếp tục?", "Confirm", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                // Code xử lý khi người dùng chọn Yes                              
+                    qlnv.UPDATE(nv);                                              
+            }
+            else
+            {
+                // Code xử lý khi người dùng chọn No
             }
         }
 

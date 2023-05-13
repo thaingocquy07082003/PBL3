@@ -67,7 +67,7 @@
             this.panel2.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel2.Location = new System.Drawing.Point(0, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(13, 656);
+            this.panel2.Size = new System.Drawing.Size(13, 659);
             this.panel2.TabIndex = 1;
             // 
             // panel3
@@ -83,7 +83,7 @@
             this.panel4.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel4.Location = new System.Drawing.Point(527, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(20, 660);
+            this.panel4.Size = new System.Drawing.Size(20, 663);
             this.panel4.TabIndex = 3;
             // 
             // pictureBox1

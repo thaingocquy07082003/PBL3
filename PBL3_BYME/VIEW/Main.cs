@@ -18,6 +18,7 @@ namespace PBL3_BYME
         private string IDNhanVien { get; set; } // dac trung cho chuc vu ( cap quyen cho moi nhan vien)
         private QLKSEntities db = new QLKSEntities();
         private QL_TaiKhoan qltk = new QL_TaiKhoan();
+        private QL_LichSuDangNhap qllsdn = new QL_LichSuDangNhap();
         private Form currentChildForm;
         public Main()
         {
@@ -168,6 +169,12 @@ namespace PBL3_BYME
         private void button7_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormQLPhong());
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            qllsdn.addLichSu(IDNhanVien, false);
+            this.Close();
         }
     }
 }

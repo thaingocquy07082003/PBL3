@@ -27,6 +27,7 @@ namespace PBL3_BYME
         {
             List<KhachHangView> data = new List<KhachHangView>();
             data = tmp.getAllKhachHang();
+            dataGridView1.DataSource = data;
 
         }
         private void showCBB()

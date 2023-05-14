@@ -294,7 +294,7 @@
             this.toolStripMenuItem3});
             this.MenuUser.Name = "MenuUser";
             this.MenuUser.ShowCheckMargin = true;
-            this.MenuUser.Size = new System.Drawing.Size(239, 82);
+            this.MenuUser.Size = new System.Drawing.Size(239, 110);
             this.MenuUser.Text = "MenuUser";
             // 
             // toolStripMenuItem1
@@ -322,6 +322,7 @@
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(238, 26);
             this.toolStripMenuItem3.Text = "Đăng Xuất";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // Main
             // 

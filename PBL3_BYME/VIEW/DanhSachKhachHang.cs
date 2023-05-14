@@ -104,6 +104,7 @@ namespace PBL3_BYME
                     if (confirmResult == DialogResult.Yes)
                     {
                         tmp.delete(i.Cells["IdKhachHang"].Value.ToString());
+                        showKH();
                     }
                     else
                     {

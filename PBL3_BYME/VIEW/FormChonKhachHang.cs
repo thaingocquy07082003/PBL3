@@ -15,12 +15,17 @@ namespace PBL3_BYME
     {
         public delegate void Mydel(string IDkh);
         public Mydel d;
-        
+        QL_KhachHang qlkh = new QL_KhachHang();
         public FormChonKhachHang()
         {
             InitializeComponent();
             SetCBB();
+            SetDisplay();
+        }
 
+        public void SetDisplay()
+        {
+            dataGridView1.DataSource = qlkh.getAllKhachHang();
         }
         public void SetCBB()
         {

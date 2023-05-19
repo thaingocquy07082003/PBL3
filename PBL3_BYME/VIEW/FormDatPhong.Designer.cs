@@ -75,7 +75,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 26);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(360, 247);
+            this.groupBox1.Size = new System.Drawing.Size(433, 247);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Đặt Phòng";
@@ -178,9 +178,9 @@
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.comboBox1);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Location = new System.Drawing.Point(13, 319);
+            this.groupBox3.Location = new System.Drawing.Point(14, 319);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(360, 301);
+            this.groupBox3.Size = new System.Drawing.Size(433, 301);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Book";
@@ -220,9 +220,9 @@
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(183, 191);
+            this.button2.Location = new System.Drawing.Point(216, 191);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(171, 32);
+            this.button2.Size = new System.Drawing.Size(217, 32);
             this.button2.TabIndex = 7;
             this.button2.UseVisualStyleBackColor = false;
             // 
@@ -230,9 +230,9 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(6, 192);
+            this.button1.Location = new System.Drawing.Point(-1, 192);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 31);
+            this.button1.Size = new System.Drawing.Size(197, 31);
             this.button1.TabIndex = 6;
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button1.UseVisualStyleBackColor = false;
@@ -290,9 +290,9 @@
             // button6
             // 
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(765, 26);
+            this.button6.Location = new System.Drawing.Point(753, 26);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(143, 33);
+            this.button6.Size = new System.Drawing.Size(181, 33);
             this.button6.TabIndex = 2;
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);

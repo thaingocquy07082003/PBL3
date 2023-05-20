@@ -81,6 +81,8 @@
     <Compile Include="DichVu.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\BaoCao.cs" />
+    <Compile Include="DTO\CBBItem.cs" />
     <Compile Include="DTO\CBBItemPhong.cs" />
     <Compile Include="DTO\KhachHangView.cs" />
     <Compile Include="DTO\TaiKhoanView.cs" />

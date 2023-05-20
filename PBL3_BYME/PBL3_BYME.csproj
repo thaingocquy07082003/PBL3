@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BLL_ChiTietDichVu.cs" />
     <Compile Include="BLL\DatPhong_BLL.cs" />
     <Compile Include="BLL\QL_HoaDon.cs" />
     <Compile Include="BLL\QL_KhachHang.cs" />
@@ -129,6 +130,12 @@
     </Compile>
     <Compile Include="VatDungPhong.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\ChiTietThuePhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\ChiTietThuePhong.Designer.cs">
+      <DependentUpon>ChiTietThuePhong.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\DanhSachKhachHang.cs">
       <SubType>Form</SubType>
@@ -216,6 +223,9 @@
     <Compile Include="VIEW\TimPhong.Designer.cs">
       <DependentUpon>TimPhong.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VIEW\ChiTietThuePhong.resx">
+      <DependentUpon>ChiTietThuePhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VIEW\DanhSachKhachHang.resx">
       <DependentUpon>DanhSachKhachHang.cs</DependentUpon>
     </EmbeddedResource>

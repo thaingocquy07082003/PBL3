@@ -17,11 +17,10 @@ namespace PBL3_BYME
         public int ID_ChiTietSuDungDichVu { get; set; }
         public string ID_Phong { get; set; }
         public string ID_DichVu { get; set; }
-        public string ID_HoaDon { get; set; }
+        public string ID_HoaDon { get; set;}
         public Nullable<System.DateTime> NgaySuDung { get; set; }
         public Nullable<int> SoLuong { get; set; }
-        public Nullable<bool> TrangThai { get; set; }
-    
+        public Nullable<bool> TrangThai { get; set; }    
         public virtual DichVu DichVu { get; set; }
         public virtual HoaDon HoaDon { get; set; }
         public virtual PHONG PHONG { get; set; }

@@ -175,5 +175,35 @@ namespace PBL3_BYME.BLL
             }
             return data;
         }
+
+        // ADD Hoa Don 
+        public void ADDHD(HoaDon hd,string idphong)
+        {
+            LamHu lh = new LamHu
+            {
+                IdHoaDon = hd.IdHoaDon,
+                IdPhong = idphong,
+                IdLoaiVatDung = "01",
+                SoLuongLamHu = 0
+            };
+
+            db.LamHus.Add(lh);
+            db.SaveChanges();
+            db.HoaDons.Add(hd);
+            db.SaveChanges();
+        }
+
+        // tu dong lay 1 id hoa don ms
+        public string GetNewIDHD()
+        {
+            int idtt = 0;
+            List<string> data = new List<string>();
+            foreach (var i in db.HoaDons.Select(p => p).OrderBy(p => p.IdHoaDon))
+            {
+                idtt++;
+            }
+            idtt++;
+            return "0" + idtt.ToString();
+        }
     }
 }

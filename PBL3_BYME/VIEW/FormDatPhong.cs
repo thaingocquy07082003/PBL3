@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PBL3_BYME.BLL;
 using PBL3_BYME.DTO;
+using PBL3_BYME.VIEW;
+
 namespace PBL3_BYME
 {
     public partial class FormDatPhong : Form 
@@ -117,8 +119,30 @@ namespace PBL3_BYME
                 datphong.AddBook(label5.Text, label6.Text, tiencoc);
             }
             datphong.AddChiTiet(listchitiet);
+            string newid = datphong.GetNewIDHD();
+            HoaDon hoadon = new HoaDon {
+                 IdHoaDon = newid,
+                 IdKhachHang = label5.Text,
+                 IdNhanVien = label6.Text,
+                 NgayHoaDon = DateTime.Now,
+                 TinhTrang = true,
+                 GhiChu = "Not thing",
+                 
+            };
+            if (textBox1.Text == "")
+            {
+                hoadon.TienTraTruoc = 0;
+            }
+            else
+            {
+                hoadon.TienTraTruoc = Convert.ToInt32(textBox1.Text);
+            }
+            datphong.ADDHD(hoadon, datphong.GetIDPhongByTenPhong(comboBox1.SelectedItem.ToString()));
             MessageBox.Show("Đặt Phòng Thành Công");
+            ChiTietThuePhongAdd fom = new ChiTietThuePhongAdd(newid, datphong.GetIDPhongByTenPhong(comboBox1.SelectedItem.ToString()));
+            fom.ShowDialog();
             this.Close();
+
         }
     }
 }

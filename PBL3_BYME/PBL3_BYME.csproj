@@ -132,11 +132,11 @@
     <Compile Include="VatDungPhong.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
-    <Compile Include="VIEW\ChiTietThuePhong.cs">
+    <Compile Include="VIEW\ChiTietThuePhongAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VIEW\ChiTietThuePhong.Designer.cs">
-      <DependentUpon>ChiTietThuePhong.cs</DependentUpon>
+    <Compile Include="VIEW\ChiTietThuePhongAdd.Designer.cs">
+      <DependentUpon>ChiTietThuePhongAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\DanhSachKhachHang.cs">
       <SubType>Form</SubType>
@@ -224,8 +224,8 @@
     <Compile Include="VIEW\TimPhong.Designer.cs">
       <DependentUpon>TimPhong.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="VIEW\ChiTietThuePhong.resx">
-      <DependentUpon>ChiTietThuePhong.cs</DependentUpon>
+    <EmbeddedResource Include="VIEW\ChiTietThuePhongAdd.resx">
+      <DependentUpon>ChiTietThuePhongAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\DanhSachKhachHang.resx">
       <DependentUpon>DanhSachKhachHang.cs</DependentUpon>

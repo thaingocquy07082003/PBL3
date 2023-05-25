@@ -91,5 +91,33 @@ namespace PBL3_BYME.BLL
             }
             return name;
         }
+
+        // Add Chi tiet su dung dich vu
+        public void ADD (ChiTietSuDungDichVu chitiet)
+        {
+            db.ChiTietSuDungDichVus.Add(chitiet);
+            db.SaveChanges();
+        }
+
+        // Xoa Chi tiet su dung dich vu
+        public void DELETE(int id)
+        {
+            foreach (ChiTietSuDungDichVu i in db.ChiTietSuDungDichVus.ToList())
+            {
+                if (i.ID_ChiTietSuDungDichVu == id)
+                {
+                    try
+                    {
+                        db.ChiTietSuDungDichVus.Remove(i);
+                        db.SaveChanges();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                    }
+
+                }
+            }
+        }
     }
 }

@@ -176,5 +176,10 @@ namespace PBL3_BYME
             qllsdn.addLichSu(IDNhanVien, false);
             this.Close();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new ChonHoaDon());
+        }
     }
 }

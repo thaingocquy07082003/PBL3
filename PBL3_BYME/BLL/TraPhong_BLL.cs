@@ -212,7 +212,10 @@ namespace PBL3_BYME.BLL
             List<LamHu> lamHus = db.LamHus.Where(p => p.IdPhong == idHOADON).Select(p => p).ToList();
             foreach(LamHu i in lamHus)
             {
-                cost += (long)(i.SoLuongLamHu * i.LoaiVatDung.DonGia);
+                if (i.IdHoaDon == idHOADON)
+                {
+                    cost += (long)(i.SoLuongLamHu * i.LoaiVatDung.DonGia);
+                }
             }
             return cost;
         }

@@ -209,6 +209,10 @@ namespace PBL3_BYME.BLL
         ////xoa khach hang
         public void delete(string id)
         {
+            var record2 = db.ChiTietSuDungDichVus.FirstOrDefault(x => x.ID_HoaDon == id);
+            db.ChiTietSuDungDichVus.Remove(record2);
+            db.SaveChanges();
+
             var record = db.HoaDons.FirstOrDefault(x => x.IdHoaDon == id);
             db.HoaDons.Remove(record);
             db.SaveChanges();

@@ -17,6 +17,7 @@ namespace PBL3_BYME.VIEW
         public ChonHoaDon()
         {
             InitializeComponent();
+            GUI();
         }
 
         public void GUI()
@@ -26,7 +27,10 @@ namespace PBL3_BYME.VIEW
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            DataGridViewRow row = dataGridView1.SelectedRows[0];
+            string idhoadon = row.Cells["IdHoaDon"].Value.ToString();
+            TraPhong traphong = new TraPhong(idhoadon);
+            traphong.ShowDialog();           
         }
     }
 }

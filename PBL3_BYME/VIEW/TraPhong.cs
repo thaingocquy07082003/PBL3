@@ -53,7 +53,13 @@ namespace PBL3_BYME.VIEW
             label22.Text = traphong.GetCheckInDay(traphong.GetIdBookByIdKH(hoadon.IdKhachHang, hoadon.IdNhanVien)).ToString();
             label23.Text = traphong.GetCheckOutDay(traphong.GetIdBookByIdKH(hoadon.IdKhachHang, hoadon.IdNhanVien)).ToString();
             ChiTietThuePhong chitietthuephong = traphong.Getchitiet(traphong.GetIdPhong(traphong.GetIdBookByIdKH(hoadon.IdKhachHang, hoadon.IdNhanVien)));
-            label25.Text = (traphong.GetCostOfRoom(label20.Text) * ((chitietthuephong.NgayCheckOut - chitietthuephong.NgayCheckIn).Value.Days + 1)).ToString();
+            DateTime startDate = traphong.GetCheckInDay(traphong.GetIdBookByIdKH(hoadon.IdKhachHang, hoadon.IdNhanVien)); // Ngày bắt đầu
+            DateTime endDate = traphong.GetCheckOutDay(traphong.GetIdBookByIdKH(hoadon.IdKhachHang, hoadon.IdNhanVien)); // Ngày kết thúc
+
+            TimeSpan duration = endDate - startDate; // Tính khoảng thời gian giữa hai ngày
+
+            int numberOfDays = duration.Days; // Lấy số ngày
+            label25.Text = (traphong.GetCostOfRoom(label20.Text) * numberOfDays).ToString();
             label26.Text = traphong.GetCostDV(traphong.GetIdPhong(traphong.GetIdBookByIdKH(hoadon.IdKhachHang, hoadon.IdNhanVien))).ToString();
             label27.Text = traphong.GetCostVD(hoadon.IdHoaDon).ToString();
             label28.Text = hoadon.TienTraTruoc.ToString();

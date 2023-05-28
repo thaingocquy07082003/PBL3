@@ -56,6 +56,8 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -104,6 +106,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkBlue;
+            this.panel4.Controls.Add(this.button11);
+            this.panel4.Controls.Add(this.button10);
             this.panel4.Controls.Add(this.pictureBox3);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.pictureBox2);
@@ -294,7 +298,7 @@
             this.toolStripMenuItem3});
             this.MenuUser.Name = "MenuUser";
             this.MenuUser.ShowCheckMargin = true;
-            this.MenuUser.Size = new System.Drawing.Size(239, 110);
+            this.MenuUser.Size = new System.Drawing.Size(239, 82);
             this.MenuUser.Text = "MenuUser";
             // 
             // toolStripMenuItem1
@@ -323,6 +327,27 @@
             this.toolStripMenuItem3.Size = new System.Drawing.Size(238, 26);
             this.toolStripMenuItem3.Text = "Đăng Xuất";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button10.ContextMenuStrip = this.MenuUser;
+            this.button10.Location = new System.Drawing.Point(354, 55);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(90, 30);
+            this.button10.TabIndex = 3;
+            this.button10.Text = "Trả Phòng";
+            this.button10.UseVisualStyleBackColor = false;
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button11.Location = new System.Drawing.Point(525, 55);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(91, 30);
+            this.button11.TabIndex = 4;
+            this.button11.Text = "button11";
+            this.button11.UseVisualStyleBackColor = false;
             // 
             // Main
             // 
@@ -379,5 +404,7 @@
         public System.Windows.Forms.ContextMenuStrip MenuQuanLi;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button10;
     }
 }

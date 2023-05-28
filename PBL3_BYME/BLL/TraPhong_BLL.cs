@@ -130,5 +130,91 @@ namespace PBL3_BYME.BLL
             }
             return s;
         }
+
+        // Lay ngay thue 
+        public DateTime GetCheckInDay(string Idbook)
+        {
+            DateTime dt = DateTime.Now;
+            foreach(ChiTietBook i in db.ChiTietBooks.ToList())
+            {
+                if(i.IdBook == Idbook)
+                {
+                    return Convert.ToDateTime(i.NgayCheckInPhong);
+                }
+            }
+            return dt;
+        }
+
+        // Lay Ngay tra 
+        public DateTime GetCheckOutDay(string Idbook)
+        {
+            DateTime dt = DateTime.Now;
+            foreach (ChiTietBook i in db.ChiTietBooks.ToList())
+            {
+                if (i.IdBook == Idbook)
+                {
+                    return Convert.ToDateTime(i.NgayCheckOutPhong);
+                }
+            }
+            return dt;
+        }
+
+        // Lay don gia phong
+        public int GetCostOfRoom(string tenphong)
+        {
+            int cost = 0;
+            foreach(PHONG i in db.PHONGs.ToList())
+            {
+                if(i.TenPhong == tenphong)
+                {
+                    cost = Convert.ToInt32(i.DonGiaPhong);
+                }
+            }
+            return cost;
+        }
+
+        // Lay chi tiet thue phong
+        public ChiTietThuePhong Getchitiet(string idphong)
+        {
+            return db.ChiTietThuePhongs.Where(p => p.IdPhong == idphong && p.TrangThai == false).FirstOrDefault();
+        }
+
+        // Lay Gia cua dich vu 
+        public string GetGiaDV(string iddichvu)
+        {
+            string s = "";
+            foreach(DichVu i in db.DichVus.ToList())
+            {
+                if(i.IdDichVu == iddichvu)
+                {
+                    return i.DonGia;
+                }
+            }
+            return s;
+        }
+
+        // lay gia dich vu ung voi Id Phong dang dc thue
+        public long GetCostDV(string idphong)
+        {
+            long cost = 0;
+            List<ChiTietSuDungDichVu> chiTietSuDungDichVus = db.ChiTietSuDungDichVus.Where(p => p.ID_Phong == idphong && p.TrangThai == false).ToList();
+            foreach(ChiTietSuDungDichVu i in chiTietSuDungDichVus)
+            {
+                cost += (long)(i.SoLuong * Convert.ToInt32(i.DichVu.DonGia));
+            }
+            return cost;
+        }
+
+        // Lay gia Vat dung lam hu
+        public long GetCostVD(string idHOADON)
+        {
+            long cost = 0;
+            List<LamHu> lamHus = db.LamHus.Where(p => p.IdPhong == idHOADON).Select(p => p).ToList();
+            foreach(LamHu i in lamHus)
+            {
+                cost += (long)(i.SoLuongLamHu * i.LoaiVatDung.DonGia);
+            }
+            return cost;
+        }
     }
 }

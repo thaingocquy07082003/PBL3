@@ -50,6 +50,16 @@ namespace PBL3_BYME.VIEW
             label19.Text = traphong.GetNameKhachHang(hoadon.IdKhachHang);
             label20.Text = traphong.GetNamePhong(traphong.GetIdPhong(traphong.GetIdBookByIdKH(hoadon.IdKhachHang,hoadon.IdNhanVien)));
             label21.Text = traphong.GetNameNV(hoadon.IdNhanVien);
+            label22.Text = traphong.GetCheckInDay(traphong.GetIdBookByIdKH(hoadon.IdKhachHang, hoadon.IdNhanVien)).ToString();
+            label23.Text = traphong.GetCheckOutDay(traphong.GetIdBookByIdKH(hoadon.IdKhachHang, hoadon.IdNhanVien)).ToString();
+            ChiTietThuePhong chitietthuephong = traphong.Getchitiet(traphong.GetIdPhong(traphong.GetIdBookByIdKH(hoadon.IdKhachHang, hoadon.IdNhanVien)));
+            label25.Text = (traphong.GetCostOfRoom(label20.Text) * ((chitietthuephong.NgayCheckOut - chitietthuephong.NgayCheckIn).Value.Days + 1)).ToString();
+            label26.Text = traphong.GetCostDV(traphong.GetIdPhong(traphong.GetIdBookByIdKH(hoadon.IdKhachHang, hoadon.IdNhanVien))).ToString();
+            label27.Text = traphong.GetCostVD(hoadon.IdHoaDon).ToString();
+            label28.Text = hoadon.TienTraTruoc.ToString();
+            label29.Text = (Convert.ToInt32(label25.Text) + Convert.ToInt32(label26.Text) + Convert.ToInt32(label27.Text) - Convert.ToInt32(label28.Text)).ToString(); 
+                 
+
         }
     }
 }

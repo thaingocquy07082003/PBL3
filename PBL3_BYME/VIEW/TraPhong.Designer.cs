@@ -43,14 +43,12 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button7 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -206,24 +204,24 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(675, 36);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(772, 282);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.SpringGreen;
             this.tabPage2.Controls.Add(this.button7);
             this.tabPage2.Controls.Add(this.dateTimePicker1);
-            this.tabPage2.Controls.Add(this.comboBox2);
             this.tabPage2.Controls.Add(this.textBox5);
             this.tabPage2.Controls.Add(this.textBox4);
             this.tabPage2.Controls.Add(this.textBox3);
             this.tabPage2.Controls.Add(this.label32);
             this.tabPage2.Controls.Add(this.label31);
             this.tabPage2.Controls.Add(this.label30);
-            this.tabPage2.Controls.Add(this.label24);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.dataGridView2);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
@@ -250,14 +248,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(248, 22);
             this.dateTimePicker1.TabIndex = 10;
             // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(115, 110);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(155, 24);
-            this.comboBox2.TabIndex = 9;
-            // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(409, 56);
@@ -282,47 +272,38 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(316, 194);
+            this.label32.Location = new System.Drawing.Point(303, 194);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(51, 16);
+            this.label32.Size = new System.Drawing.Size(90, 16);
             this.label32.TabIndex = 5;
-            this.label32.Text = "label32";
+            this.label32.Text = "Ngày sử dụng";
             // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(316, 56);
+            this.label31.Location = new System.Drawing.Point(335, 59);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(51, 16);
+            this.label31.Size = new System.Drawing.Size(53, 16);
             this.label31.TabIndex = 4;
-            this.label31.Text = "label31";
+            this.label31.Text = "Đơn giá";
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(24, 197);
+            this.label30.Location = new System.Drawing.Point(39, 197);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(51, 16);
+            this.label30.Size = new System.Drawing.Size(60, 16);
             this.label30.TabIndex = 3;
-            this.label30.Text = "label30";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(27, 119);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(51, 16);
-            this.label24.TabIndex = 2;
-            this.label24.Text = "label24";
+            this.label30.Text = "Số lượng";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(24, 56);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 16);
+            this.label8.Size = new System.Drawing.Size(78, 16);
             this.label8.TabIndex = 1;
-            this.label8.Text = "label8";
+            this.label8.Text = "Tên Dich vu";
             // 
             // dataGridView2
             // 
@@ -330,10 +311,12 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(715, 29);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(767, 308);
             this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_RowHeaderMouseClick);
             // 
             // groupBox1
             // 
@@ -680,14 +663,12 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label8;
     }
 }

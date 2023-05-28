@@ -37,12 +37,15 @@ namespace PBL3_BYME.BLL
         }
 
         //  lay danh sach cac chi tiet su dung dich vu ( cac dich vu da va dang dc use)
-        public List<ChiTietDichVu_View> GetAllChiTietDV()
+        public List<ChiTietDichVu_View> GetAllChiTietDV(string Idhoadon)
         {
             List<ChiTietDichVu_View> data = new List<ChiTietDichVu_View>();
             foreach (ChiTietSuDungDichVu i in db.ChiTietSuDungDichVus.ToList())
             {
-                data.Add(View(i));
+                if (i.ID_HoaDon == Idhoadon && i.TrangThai == false)
+                {
+                    data.Add(View(i));
+                }
             }
             return data;
         }
@@ -209,7 +212,7 @@ namespace PBL3_BYME.BLL
         public long GetCostVD(string idHOADON)
         {
             long cost = 0;
-            List<LamHu> lamHus = db.LamHus.Where(p => p.IdPhong == idHOADON).Select(p => p).ToList();
+            List<LamHu> lamHus = db.LamHus.Where(p => p.IdHoaDon == idHOADON).Select(p => p).ToList();
             foreach(LamHu i in lamHus)
             {
                 if (i.IdHoaDon == idHOADON)
@@ -218,6 +221,52 @@ namespace PBL3_BYME.BLL
                 }
             }
             return cost;
+        }
+
+        // Lay tat ca cac vat dung 
+        public List<string> GetAllNameVD()
+        {
+            List<string> data = new List<string>();
+            foreach(LoaiVatDung i in db.LoaiVatDungs.ToList())
+            {
+                data.Add(i.TenVatDung);
+            }
+            return data;
+        }
+
+        // Lay danh sach lam hu ung voi Id hoa don 
+        public List<LamHu_view> GetAllLamHu(string idhoadon)
+        {
+            List<LamHu_view> data = new List<LamHu_view>();
+            foreach(LamHu i in db.LamHus.ToList())
+            {
+                if(i.IdHoaDon == idhoadon && i.SoLuongLamHu != 0)
+                {
+                    data.Add(new LamHu_view
+                    {
+                        IdHoaDon = i.IdHoaDon,
+                        VatDung = i.LoaiVatDung.TenVatDung,
+                        DonGia = Convert.ToInt32(i.LoaiVatDung.DonGia),
+                        SoLuong = Convert.ToInt32(i.SoLuongLamHu)
+                    });
+                }
+            }
+            return data;
+        }
+
+
+        // Lay ten dich vu theo id dich vu 
+        public string GetNameDVbyID(string Iddichvu)
+        {
+            string s = "";
+            foreach(DichVu i in db.DichVus.ToList())
+            {
+                if(i.IdDichVu == Iddichvu)
+                {
+                    return i.TenDichVu;
+                }
+            }
+            return s;
         }
     }
 }

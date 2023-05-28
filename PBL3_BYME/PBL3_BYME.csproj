@@ -88,6 +88,7 @@
     <Compile Include="DTO\ChiTietDichVu_View.cs" />
     <Compile Include="DTO\HoaDon_View.cs" />
     <Compile Include="DTO\KhachHangView.cs" />
+    <Compile Include="DTO\LamHu_view.cs" />
     <Compile Include="DTO\Phong_View.cs" />
     <Compile Include="DTO\TaiKhoanView.cs" />
     <Compile Include="HoaDon.cs">

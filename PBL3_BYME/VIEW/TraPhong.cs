@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PBL3_BYME.BLL;
 using PBL3_BYME.DTO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 namespace PBL3_BYME.VIEW
 {
     public partial class TraPhong : Form
@@ -63,9 +65,31 @@ namespace PBL3_BYME.VIEW
             label26.Text = traphong.GetCostDV(traphong.GetIdPhong(traphong.GetIdBookByIdKH(hoadon.IdKhachHang, hoadon.IdNhanVien))).ToString();
             label27.Text = traphong.GetCostVD(hoadon.IdHoaDon).ToString();
             label28.Text = hoadon.TienTraTruoc.ToString();
-            label29.Text = (Convert.ToInt32(label25.Text) + Convert.ToInt32(label26.Text) + Convert.ToInt32(label27.Text) - Convert.ToInt32(label28.Text)).ToString(); 
-                 
+            label29.Text = (Convert.ToInt32(label25.Text) + Convert.ToInt32(label26.Text) + Convert.ToInt32(label27.Text) - Convert.ToInt32(label28.Text)).ToString();
+            dataGridView2.DataSource = traphong.GetAllChiTietDV(hoadon.IdHoaDon);
+            dataGridView1.DataSource = traphong.GetAllLamHu(ID_HoaDon);
+            comboBox1.Items.AddRange(traphong.GetAllNameVD().ToArray());
+        }
 
+        private void dataGridView2_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewRow row = dataGridView2.SelectedRows[0];
+            textBox3.Text = traphong.GetNameDVbyID(row.Cells["ID_DichVu"].Value.ToString());
+            textBox5.Text = traphong.GetGiaDV(row.Cells["ID_DichVu"].Value.ToString()).ToString();
+            textBox4.Text = row.Cells["SoLuong"].Value.ToString();
+            dateTimePicker1.Value = Convert.ToDateTime(row.Cells["NgaySuDung"].Value);
+        }
+
+        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewRow row = dataGridView1.SelectedRows[0];
+            int index = comboBox1.FindStringExact(row.Cells["VatDung"].Value.ToString());
+            if (index != -1)
+            {
+                comboBox1.SelectedIndex = index;
+            }
+            textBox1.Text = row.Cells["DonGia"].Value.ToString();
+            textBox2.Text = row.Cells["SoLuong"].Value.ToString();
         }
     }
 }

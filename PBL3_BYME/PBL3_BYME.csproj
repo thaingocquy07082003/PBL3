@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BaoCao_BLL.cs" />
     <Compile Include="BLL\BLL_ChiTietDichVu.cs" />
     <Compile Include="BLL\ChonHoaDon_BLL.cs" />
     <Compile Include="BLL\DatPhong_BLL.cs" />
@@ -84,6 +85,8 @@
     <Compile Include="DichVu.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\BaoCao.cs" />
+    <Compile Include="DTO\CBBItem.cs" />
     <Compile Include="DTO\CBBItemPhong.cs" />
     <Compile Include="DTO\ChiTietDichVu_View.cs" />
     <Compile Include="DTO\HoaDon_View.cs" />

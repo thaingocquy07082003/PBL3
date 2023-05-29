@@ -32,5 +32,13 @@ namespace PBL3_BYME.VIEW
             TraPhong traphong = new TraPhong(idhoadon);
             traphong.ShowDialog();           
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dataGridView1.SelectedRows[0];
+            string idhoadon = row.Cells["IdHoaDon"].Value.ToString();
+            ChiTietThuePhongAdd dform = new ChiTietThuePhongAdd(idhoadon, chd.GetIDPhong(idhoadon));
+            dform.ShowDialog();
+        }
     }
 }

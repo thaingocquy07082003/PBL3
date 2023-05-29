@@ -125,7 +125,7 @@ namespace PBL3_BYME
                  IdKhachHang = label5.Text,
                  IdNhanVien = label6.Text,
                  NgayHoaDon = DateTime.Now,
-                 TinhTrang = true,
+                 TinhTrang = false,
                  GhiChu = "Not thing",
                  
             };

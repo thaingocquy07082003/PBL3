@@ -181,5 +181,11 @@ namespace PBL3_BYME
         {
             OpenChildForm(new ChonHoaDon());
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            DoiPassWord dform = new DoiPassWord(IDNhanVien);
+            dform.ShowDialog();
+        }
     }
 }

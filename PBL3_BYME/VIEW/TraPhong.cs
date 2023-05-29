@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using PBL3_BYME.BLL;
 using PBL3_BYME.DTO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace PBL3_BYME.VIEW
 {
@@ -21,7 +22,7 @@ namespace PBL3_BYME.VIEW
         {
             InitializeComponent();
             this.ID_HoaDon = ID_HoaDon;
-            GUI();
+            GUI(traphong.GetAllLamHu(ID_HoaDon));
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -43,8 +44,16 @@ namespace PBL3_BYME.VIEW
         {
 
         }
-
-        public void GUI()
+        public long GetCostDV()
+        {
+            long s = 0;
+            foreach(DataGridViewRow row in dataGridView1.Rows)
+            {
+                s += (long)(Convert.ToInt32(row.Cells["DonGia"].Value) * Convert.ToInt32(row.Cells["SoLuong"].Value));
+            }
+            return s;
+        }
+        public void GUI(List<LamHu_view> data)
         {
             label17.Text = ID_HoaDon;
             HoaDon hoadon = traphong.GetHoaDonByIdHoaDon(ID_HoaDon);
@@ -63,11 +72,11 @@ namespace PBL3_BYME.VIEW
             int numberOfDays = duration.Days; // Lấy số ngày
             label25.Text = (traphong.GetCostOfRoom(label20.Text) * numberOfDays).ToString();
             label26.Text = traphong.GetCostDV(traphong.GetIdPhong(traphong.GetIdBookByIdKH(hoadon.IdKhachHang, hoadon.IdNhanVien))).ToString();
-            label27.Text = traphong.GetCostVD(hoadon.IdHoaDon).ToString();
+            SetDGV(data);
+            label27.Text = GetCostDV().ToString();
             label28.Text = hoadon.TienTraTruoc.ToString();
             label29.Text = (Convert.ToInt32(label25.Text) + Convert.ToInt32(label26.Text) + Convert.ToInt32(label27.Text) - Convert.ToInt32(label28.Text)).ToString();
             dataGridView2.DataSource = traphong.GetAllChiTietDV(hoadon.IdHoaDon);
-            dataGridView1.DataSource = traphong.GetAllLamHu(ID_HoaDon);
             comboBox1.Items.AddRange(traphong.GetAllNameVD().ToArray());
         }
 
@@ -90,6 +99,71 @@ namespace PBL3_BYME.VIEW
             }
             textBox1.Text = row.Cells["DonGia"].Value.ToString();
             textBox2.Text = row.Cells["SoLuong"].Value.ToString();
+        }
+        public void SetDGV(List<LamHu_view> data)
+        {
+            dataGridView1.DataSource = data;
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                HoaDon hoadon = traphong.GetHoaDonByIdHoaDon(ID_HoaDon);
+                List<LamHu_view> data = traphong.GetAllLamHu(ID_HoaDon);
+                data.Add(new LamHu_view
+                {
+                    IdHoaDon = ID_HoaDon,
+                    VatDung = comboBox1.SelectedItem.ToString(),
+                    DonGia = traphong.GetGiaVD(comboBox1.SelectedItem.ToString()),
+                    SoLuong = Convert.ToInt32(textBox2.Text)
+                });
+                GUI(data);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                HoaDon hoadon = traphong.GetHoaDonByIdHoaDon(ID_HoaDon);
+
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    List<LamHu_view> data = new List<LamHu_view>();
+                    foreach(DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        data.Add(((LamHu_view)row.DataBoundItem));
+                    }
+
+                    foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                    {
+                        data.Remove(((LamHu_view)row.DataBoundItem));
+                    }
+                    GUI(data);
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            HoaDon hoadon = traphong.GetHoaDonByIdHoaDon(ID_HoaDon);
+            ChiTietThuePhongAdd dform = new ChiTietThuePhongAdd(ID_HoaDon, traphong.GetIdPhong(traphong.GetIdBookByIdKH(hoadon.IdKhachHang, hoadon.IdNhanVien)));
+            dform.ShowDialog();
+            dform = null;
+            dataGridView2.DataSource = traphong.GetAllChiTietDV(hoadon.IdHoaDon);
+            label26.Text = traphong.GetCostDV(traphong.GetIdPhong(traphong.GetIdBookByIdKH(hoadon.IdKhachHang, hoadon.IdNhanVien))).ToString();
+            label29.Text = (Convert.ToInt32(label25.Text) + Convert.ToInt32(label26.Text) + Convert.ToInt32(label27.Text) - Convert.ToInt32(label28.Text)).ToString();
         }
     }
 }

@@ -14,14 +14,17 @@ namespace PBL3_BYME.BLL
             List<HoaDon_View> list = new List<HoaDon_View>();
             foreach(HoaDon i in db.HoaDons.ToList())
             {
-                list.Add(new HoaDon_View
+                if (i.TinhTrang == false)
                 {
-                    IdHoaDon = i.IdHoaDon,
-                    TenKhachHang = i.KhachHang.Ten,
-                    SDT = i.KhachHang.SDT,
-                    CCCD = i.KhachHang.CMND,
-                    TenPhong = GetNamePhong(GetIDPhong(i.IdHoaDon))
-                }) ;
+                    list.Add(new HoaDon_View
+                    {
+                        IdHoaDon = i.IdHoaDon,
+                        TenKhachHang = i.KhachHang.Ten,
+                        SDT = i.KhachHang.SDT,
+                        CCCD = i.KhachHang.CMND,
+                        TenPhong = GetNamePhong(GetIDPhong(i.IdHoaDon))
+                    });
+                }
             }
             return list;
         }
@@ -44,14 +47,18 @@ namespace PBL3_BYME.BLL
         public string GetIDPhong(string idhoadon)
         {
             string s = "";
-            foreach (ChiTietThuePhong i in db.ChiTietThuePhongs.ToList())
+            HoaDon hoadon = db.HoaDons.Where(p => p.IdHoaDon == idhoadon && p.TinhTrang == false).FirstOrDefault();
+            Book book = db.Books.Where(p => p.IdKhachHang == hoadon.IdKhachHang && p.IdNhanVien == hoadon.IdNhanVien && p.TrangThai == false).FirstOrDefault();
+            foreach (ChiTietBook i in db.ChiTietBooks.ToList())
             {
-                if (i.IdHoaDon == idhoadon)
+                if (i.IdBook == book.IdBook)
                 {
                     return i.IdPhong;
                 }
             }
             return s;
         }
+
+
     }
 }

@@ -35,6 +35,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.MenuUser = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -52,21 +58,15 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.MenuQuanLi = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MenuBaocao = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.MenuUser = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
+            this.MenuUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel5.SuspendLayout();
             this.panelDeskTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.MenuUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -115,6 +115,68 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1361, 127);
             this.panel4.TabIndex = 1;
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button11.Location = new System.Drawing.Point(525, 55);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(91, 30);
+            this.button11.TabIndex = 4;
+            this.button11.Text = "button11";
+            this.button11.UseVisualStyleBackColor = false;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button10.ContextMenuStrip = this.MenuUser;
+            this.button10.Location = new System.Drawing.Point(354, 55);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(90, 30);
+            this.button10.TabIndex = 3;
+            this.button10.Text = "Trả Phòng";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // MenuUser
+            // 
+            this.MenuUser.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.MenuUser.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3});
+            this.MenuUser.Name = "MenuUser";
+            this.MenuUser.ShowCheckMargin = true;
+            this.MenuUser.Size = new System.Drawing.Size(239, 110);
+            this.MenuUser.Text = "MenuUser";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.BackColor = System.Drawing.Color.Azure;
+            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
+            this.toolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(238, 26);
+            this.toolStripMenuItem1.Text = "Thông Tin Tài Khoản";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.BackColor = System.Drawing.Color.Azure;
+            this.toolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem2.Image")));
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(238, 26);
+            this.toolStripMenuItem2.Text = "Đổi Mật Khẩu";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.BackColor = System.Drawing.Color.Azure;
+            this.toolStripMenuItem3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem3.Image")));
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(238, 26);
+            this.toolStripMenuItem3.Text = "Đăng Xuất";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // pictureBox3
             // 
@@ -289,67 +351,6 @@
             this.MenuBaocao.Size = new System.Drawing.Size(61, 4);
             this.MenuBaocao.Text = "MenuBaoCao";
             // 
-            // MenuUser
-            // 
-            this.MenuUser.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.MenuUser.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2,
-            this.toolStripMenuItem3});
-            this.MenuUser.Name = "MenuUser";
-            this.MenuUser.ShowCheckMargin = true;
-            this.MenuUser.Size = new System.Drawing.Size(239, 82);
-            this.MenuUser.Text = "MenuUser";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.BackColor = System.Drawing.Color.Azure;
-            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
-            this.toolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(238, 26);
-            this.toolStripMenuItem1.Text = "Thông Tin Tài Khoản";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.BackColor = System.Drawing.Color.Azure;
-            this.toolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem2.Image")));
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(238, 26);
-            this.toolStripMenuItem2.Text = "Đổi Mật Khẩu";
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.BackColor = System.Drawing.Color.Azure;
-            this.toolStripMenuItem3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem3.Image")));
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(238, 26);
-            this.toolStripMenuItem3.Text = "Đăng Xuất";
-            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button10.ContextMenuStrip = this.MenuUser;
-            this.button10.Location = new System.Drawing.Point(354, 55);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(90, 30);
-            this.button10.TabIndex = 3;
-            this.button10.Text = "Trả Phòng";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button11.Location = new System.Drawing.Point(525, 55);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(91, 30);
-            this.button11.TabIndex = 4;
-            this.button11.Text = "button11";
-            this.button11.UseVisualStyleBackColor = false;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -367,12 +368,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.MenuUser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panelDeskTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.MenuUser.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

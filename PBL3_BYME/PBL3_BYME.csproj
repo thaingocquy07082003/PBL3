@@ -154,6 +154,12 @@
     <Compile Include="VIEW\DanhSachKhachHang.Designer.cs">
       <DependentUpon>DanhSachKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\DoiPassWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\DoiPassWord.Designer.cs">
+      <DependentUpon>DoiPassWord.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\FormAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\DanhSachKhachHang.resx">
       <DependentUpon>DanhSachKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\DoiPassWord.resx">
+      <DependentUpon>DoiPassWord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FormBaoCao.resx">
       <DependentUpon>FormBaoCao.cs</DependentUpon>

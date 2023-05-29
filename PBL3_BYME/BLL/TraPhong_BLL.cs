@@ -268,5 +268,47 @@ namespace PBL3_BYME.BLL
             }
             return s;
         }
+
+        // Add lam hu 
+        public void AddVDLH(LamHu lamHu)
+        {
+            db.LamHus.Add(lamHu);
+            db.SaveChanges();
+        }
+
+        // Lay Id vat dung 
+        public string GetIDVD(string name)
+        {
+            string s = "";
+            foreach(LoaiVatDung i in db.LoaiVatDungs.ToList())
+            {
+                if(i.TenVatDung == name)
+                {
+                    return i.IdLoaiVatDung;
+                }
+            }
+            return s;
+        }
+
+        // Xoa Lam hu 
+        public void DelLaHu(LamHu hu)
+        {
+            db.LamHus.Remove(hu);
+            db.SaveChanges();
+        }
+
+        // Lay gia at dung
+        public int GetGiaVD(string name)
+        {
+            int s = 0;
+            foreach(LoaiVatDung i in db.LoaiVatDungs.ToList())
+            {
+                if(i.TenVatDung == name)
+                {
+                    return Convert.ToInt32(i.DonGia);
+                }
+            }
+            return s;
+        }
     }
 }

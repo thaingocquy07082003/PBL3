@@ -15,6 +15,7 @@ namespace PBL3_BYME
 {
     public partial class FormBaoCao : Form
     {
+        public QLKSEntities db= new QLKSEntities();
         public BaoCao_BLL tmp=new BaoCao_BLL();
         public FormBaoCao()
         {
@@ -57,6 +58,11 @@ namespace PBL3_BYME
         private void button1_Click(object sender, EventArgs e)
         {
             show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

@@ -10,6 +10,7 @@ namespace PBL3_BYME.BLL
 {
     public class BaoCao_BLL
     {
+        private QLKSEntities db = new QLKSEntities();
         public List<BaoCao> getAllBaoCao(int thang,int nam)
         { 
             List<BaoCao> data = new List<BaoCao>();
@@ -23,12 +24,12 @@ namespace PBL3_BYME.BLL
                 {
                     IdBaoCao = id,
                     ThangNam = thangnam,
-                    SoLuotThuePhongBT = SoNgayThuePhongBT(DateTime.Now),
-                    SoLuotThuePhongVIP = SoNgayThuePhongVip(DateTime.Now),
-                    DoanhThuDV = TongDoanhThuDichVu(DateTime.Now),
-                    DoanhThuPhong = TongDoanhThuPhong(DateTime.Now),
-                    TongDoanhThu = TongDoanhThuDichVu(DateTime.Now) + TongDoanhThuPhong(DateTime.Now),
-                    SoNgayThuePhong = SoNgayThuePhongBT(DateTime.Now) + SoNgayThuePhongVip(DateTime.Now)
+                    SoLuotThuePhongBT = SoLuotThuePhongBT(thang, nam),
+                    SoLuotThuePhongVIP = SoLuotThuePhongVip(thang, nam),
+                    DoanhThuDV = TongDoanhThuDichVu(thang, nam ),
+                    DoanhThuPhong = TongDoanhThuPhong(thang, nam),
+                    TongDoanhThu = TongDoanhThuDichVu(thang, nam) + TongDoanhThuPhong(thang, nam),
+                    SoNgayThuePhong = SoLuotThuePhongBT(thang, nam) + SoLuotThuePhongVip(thang, nam)
 
 
                 });
@@ -44,33 +45,62 @@ namespace PBL3_BYME.BLL
             {
                 IdBaoCao =thang.ToString() + nam.ToString(),
                 ThangNam = ngaythang,
-                SoLuotThuePhongBT = SoNgayThuePhongBT(thang,nam),
-                SoLuotThuePhongVIP = SoNgayThuePhongVip(thang, nam),
+                SoLuotThuePhongBT = SoLuotThuePhongBT(thang,nam),
+                SoLuotThuePhongVIP = SoLuotThuePhongVip(thang, nam),
                 DoanhThuDV = TongDoanhThuDichVu(thang, nam),
                 DoanhThuPhong = TongDoanhThuPhong(thang, nam),
                 TongDoanhThu = TongDoanhThuDichVu(thang, nam) + TongDoanhThuPhong(thang, nam),
-                SoNgayThuePhong = SoNgayThuePhongBT(thang, nam) + SoNgayThuePhongVip(thang, nam)
+                SoNgayThuePhong = SoLuotThuePhongBT(thang, nam) + SoLuotThuePhongVip(thang, nam)
             });
             return data;
         }
-        public int TongDoanhThuDichVu(int thang ,int nam)
+        public int TongDoanhThuDichVu(int thang,int nam)
         {
-            int tongtien = 0;
-            return tongtien;
+            int tongTien = 0;
+            foreach (var i in db.ChiTietSuDungDichVus.Select(p=>p))
+            {
+                if (i.NgaySuDung.Value.Month == thang && i.NgaySuDung.Value.Year == nam)
+                {
+                    //tongTien += i.SoLuong * Convert.ToInt32(i.DichVu.DonGia);
+                }
+
+            }
+            return tongTien;
         }
         public int TongDoanhThuPhong(int thang,int nam)
         {
             int tongtien = 0;
+            foreach (var i in db.ChiTietThuePhongs.Select(p => p))
+            {
+                if (i.NgayCheckIn.Value.Month == thang && i.NgayCheckIn.Value.Year == nam)
+                {
+                    tongtien += ((i.NgayCheckOut - i.NgayCheckIn).Value.Days + 1)*i.DonGia.Value;
+                }
+            }
             return tongtien;
         }
-        public int SoNgayThuePhongBT(int thang,int nam)
+        public int SoLuotThuePhongBT(int thang,int nam)
         {
-            int songay = 0;
-            return songay;
+            int TongNgay = 0;
+            foreach (var i in db.ChiTietThuePhongs.Select(p=>p))
+            {
+                if (i.NgayCheckIn.Value.Month == thang && i.NgayCheckIn.Value.Year == nam)
+                {
+                    TongNgay ++;
+                }
+            }
+            return TongNgay;
         }
-        public int SoNgayThuePhongVip(int thang, int nam)
+        public int SoLuotThuePhongVip(int thang, int nam)
         {
             int songay = 0;
+            foreach (var i in db.ChiTietThuePhongs.Select(p => p))
+            {
+                if (i.NgayCheckIn.Value.Month == thang && i.NgayCheckIn.Value.Year == nam)
+                {
+                    songay++;
+                }
+            }
             return songay;
         }
     }

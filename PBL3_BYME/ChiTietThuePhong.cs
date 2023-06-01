@@ -12,7 +12,7 @@ namespace PBL3_BYME
     using System;
     using System.Collections.Generic;
     
-    public partial class ChiTietThuePhong
+    public class ChiTietThuePhong
     {
         public string IdChiTietThuePhong { get; set; }
         public string IdHoaDon { get; set; }

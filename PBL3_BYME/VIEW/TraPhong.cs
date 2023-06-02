@@ -16,6 +16,7 @@ namespace PBL3_BYME.VIEW
 {
     public partial class TraPhong : Form
     {
+        QLKSEntities db = new QLKSEntities();
         private string ID_HoaDon { get; set; }
         TraPhong_BLL traphong = new TraPhong_BLL();
         public TraPhong(string ID_HoaDon)
@@ -164,6 +165,36 @@ namespace PBL3_BYME.VIEW
             dataGridView2.DataSource = traphong.GetAllChiTietDV(hoadon.IdHoaDon);
             label26.Text = traphong.GetCostDV(traphong.GetIdPhong(traphong.GetIdBookByIdKH(hoadon.IdKhachHang, hoadon.IdNhanVien))).ToString();
             label29.Text = (Convert.ToInt32(label25.Text) + Convert.ToInt32(label26.Text) + Convert.ToInt32(label27.Text) - Convert.ToInt32(label28.Text)).ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            HoaDon hoadon = traphong.GetHoaDonByIdHoaDon(ID_HoaDon);
+            ChiTietThuePhong chitiet = new ChiTietThuePhong
+            {
+                IdChiTietThuePhong = traphong.ID_ChiTietThuePhong_Auto(),
+                IdHoaDon = ID_HoaDon,
+                IdPhong = traphong.GetIdPhong(traphong.GetIdBookByIdKH(hoadon.IdKhachHang, hoadon.IdNhanVien)),
+                NgayCheckIn = traphong.GetCheckInDay(traphong.GetIdBookByIdKH(hoadon.IdKhachHang, hoadon.IdNhanVien)),
+                NgayCheckOut = traphong.GetCheckOutDay(traphong.GetIdBookByIdKH(hoadon.IdKhachHang, hoadon.IdNhanVien)),
+                TrangThai = true,
+                DonGia = Convert.ToInt32(label25.Text) + Convert.ToInt32(label26.Text) + Convert.ToInt32(label27.Text) - Convert.ToInt32(label28.Text)
+            };
+            traphong.ADDChiTietThuePhong(chitiet);
+            ChiTietThuePhong chiTietThuePhong = new ChiTietThuePhong();
+            traphong.SetTTPhong(chitiet.IdPhong);
+            traphong.SetTTChiTietDV(chitiet.IdPhong);
+            foreach (var i in db.ChiTietThuePhongs.Select(p => p))
+            {
+                if (i.IdPhong == chitiet.IdPhong && i.HoaDon.TinhTrang == false)
+                {
+                    chiTietThuePhong = i;
+                    break;
+                }
+            }
+            traphong.SetTTHoaDon(ID_HoaDon);
+            MessageBox.Show("Thanh Toan thanh cong");
+            this.Close();
         }
     }
 }

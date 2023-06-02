@@ -310,5 +310,70 @@ namespace PBL3_BYME.BLL
             }
             return s;
         }
+
+
+        // Chuyen trang thai cua chi tiet thue phong thanh `true 
+        public void SetTTChiTietThuePhong(string IdPhong)
+        {
+            foreach (var i in db.ChiTietThuePhongs.Select(p => p))
+            {
+                if (i.IdPhong == IdPhong) i.TrangThai = true;
+            }
+            //foreach (ChiTietThuePhong i in db.ChiTietThuePhongs.Where(p => p.IDPhong == IdPhong))
+            //{
+            //    i.TrangThai = true;
+            //}
+            db.SaveChanges();
+        }
+
+
+        // chuyen trang thai nhung chi tiet su dung d thanh true
+        public void SetTTChiTietDV(string IdPhong)
+        {
+            foreach (var i in db.ChiTietSuDungDichVus.Select(p => p))
+            {
+                if (i.ID_Phong == IdPhong) i.TrangThai = true;
+            }
+            //foreach (ChiTietSuDungDichVu i in db.ChiTietSuDungDichVus.Where(p => p.ID_Phong == IdPhong))
+            //{
+            //    i.TrangThai = true;
+            //}
+            db.SaveChanges();
+        }
+
+        // chuyen trang thai phongf thanh true => sd dc
+        public void SetTTPhong(string IdPhong)
+        {
+            var c = db.PHONGs.Find(IdPhong);
+            c.TrangThai = true;
+            db.SaveChanges();
+        }
+
+        // chuyen trang thai hoa don thanh true => sd dc
+        public void SetTTHoaDon(string Idhoadon)
+        {
+            var c = db.HoaDons.Find(Idhoadon);
+            c.TinhTrang = true;
+            db.SaveChanges();
+        }
+
+        // Tu dong lay Id chitiet thue phong
+        public string ID_ChiTietThuePhong_Auto()
+        {
+            string s = "T";
+            int n = 0;
+            foreach(ChiTietThuePhong i in db.ChiTietThuePhongs.ToList())
+            {
+                n ++;
+            }
+            return s + n.ToString();
+        }
+
+        // Add ChitietThuePhong
+        public void ADDChiTietThuePhong(ChiTietThuePhong dt)
+        {
+            db.ChiTietThuePhongs.Add(dt);
+            db.SaveChanges();
+        }
     }
 }

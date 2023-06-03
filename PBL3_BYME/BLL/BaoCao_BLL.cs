@@ -24,12 +24,12 @@ namespace PBL3_BYME.BLL
                 {
                     IdBaoCao = id,
                     ThangNam = thangnam,
-                    SoLuotThuePhongBT = SoLuotThuePhongBT(thang, nam),
-                    SoLuotThuePhongVIP = SoLuotThuePhongVip(thang, nam),
-                    DoanhThuDV = TongDoanhThuDichVu(thang, nam),
-                    DoanhThuPhong = TongDoanhThuPhong(thang, nam),
-                    TongDoanhThu = TongDoanhThuDichVu(thang, nam) + TongDoanhThuPhong(thang, nam),
-                    SoNgayThuePhong = SoLuotThuePhongBT(thang, nam) + SoLuotThuePhongVip(thang, nam)
+                    SoLuotThuePhongBT = SoLuotThuePhongBT(th, nam),
+                    SoLuotThuePhongVIP = SoLuotThuePhongVip(th, nam),
+                    DoanhThuDV = TongDoanhThuDichVu(th, nam),
+                    DoanhThuPhong = TongDoanhThuPhong(th, nam),
+                    TongDoanhThu = TongDoanhThuDichVu(th, nam) + TongDoanhThuPhong(th, nam),
+                    SoNgayThuePhong = SoLuotThuePhongBT(th, nam) + SoLuotThuePhongVip(th, nam)
 
 
                 });
@@ -57,11 +57,11 @@ namespace PBL3_BYME.BLL
         public int TongDoanhThuDichVu(int thang, int nam)
         {
             int tongTien = 0;
-            foreach (var i in db.ChiTietSuDungDichVus.Select(p => p))
+            foreach (var i in db.ChiTietSuDungDichVus.ToList())
             {
                 if (i.NgaySuDung.Value.Month == thang && i.NgaySuDung.Value.Year == nam)
                 {
-                    //tongTien += i.SoLuong * Convert.ToInt32(i.DichVu.DonGia);
+                    tongTien += i.SoLuong.Value * GetDonGiaDV(i.ID_DichVu);
                 }
 
             }
@@ -70,38 +70,81 @@ namespace PBL3_BYME.BLL
         public int TongDoanhThuPhong(int thang, int nam)
         {
             int tongtien = 0;
-            foreach (var i in db.ChiTietThuePhongs.Select(p => p))
+            foreach (var i in db.ChiTietThuePhongs.ToList())
             {
                 if (i.NgayCheckIn.Value.Month == thang && i.NgayCheckIn.Value.Year == nam)
                 {
-                    tongtien += ((i.NgayCheckOut - i.NgayCheckIn).Value.Days + 1) * i.DonGia.Value;
+                    tongtien +=i.DonGia.Value;
                 }
             }
             return tongtien;
         }
         public int SoLuotThuePhongBT(int thang, int nam)
         {
-            int TongNgay = 0;
-            foreach (var i in db.ChiTietThuePhongs.Select(p => p))
-            {
-                if (i.NgayCheckIn.Value.Month == thang && i.NgayCheckIn.Value.Year == nam)
-                {
-                    TongNgay++;
-                }
-            }
-            return TongNgay;
-        }
-        public int SoLuotThuePhongVip(int thang, int nam)
-        {
             int songay = 0;
-            foreach (var i in db.ChiTietThuePhongs.Select(p => p))
+            foreach (var i in db.ChiTietThuePhongs.ToList())
             {
                 if (i.NgayCheckIn.Value.Month == thang && i.NgayCheckIn.Value.Year == nam)
                 {
-                    songay++;
+                    if (GetLoaiPhong(i.IdPhong) == "normal")
+                    {
+                        songay++;
+                    }
                 }
             }
             return songay;
         }
+        public int SoLuotThuePhongVip(int thang, int nam)
+        {
+            int songay = 0;
+            foreach (var i in db.ChiTietThuePhongs.ToList())
+            {
+                if (i.NgayCheckIn.Value.Month == thang && i.NgayCheckIn.Value.Year == nam)
+                {
+                    if (GetLoaiPhong(i.IdPhong)=="Vip")
+                    {
+                        songay++;
+                    }
+                }
+            }
+            return songay;
+        }
+        public string GetIDLoaiPhong(string idPhong)
+        {
+            string s = "";
+            foreach (PHONG i in db.PHONGs.ToList())
+            {
+                if (i.IdPhong == idPhong)
+                {
+                    return i.IdLoaiPhong;
+                }
+            }
+            return s;
+        }
+        public string GetLoaiPhong(string id)
+        {
+            string s = "";
+            foreach (LoaiPhong i in db.LoaiPhongs.ToList())
+            {
+                if (i.IdLoaiPhong == GetIDLoaiPhong(id))
+                {
+                    return i.TenLoaiPhong;
+                }
+            }
+            return s;
+        }
+        public int GetDonGiaDV(string id)
+        {
+            int s =1;
+            foreach (DichVu i in db.DichVus.ToList())
+            {
+                if (i.IdDichVu == id)
+                {
+                    return Convert.ToInt32(i.DonGia);
+                }
+            }
+            return s;
+        }
     }
+
 }

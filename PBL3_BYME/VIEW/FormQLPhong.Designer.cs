@@ -183,26 +183,26 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(533, 163);
+            this.dataGridView1.Size = new System.Drawing.Size(575, 235);
             this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // dataGridView2
             // 
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(433, 305);
+            this.dataGridView2.Location = new System.Drawing.Point(433, 358);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(533, 163);
+            this.dataGridView2.Size = new System.Drawing.Size(575, 197);
             this.dataGridView2.TabIndex = 2;
             // 
             // btnOK
             // 
             this.btnOK.BackColor = System.Drawing.Color.Azure;
             this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(516, 508);
+            this.btnOK.Location = new System.Drawing.Point(518, 561);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(111, 44);
             this.btnOK.TabIndex = 12;
@@ -213,7 +213,7 @@
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Azure;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(761, 508);
+            this.btnCancel.Location = new System.Drawing.Point(764, 561);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(113, 44);
             this.btnCancel.TabIndex = 13;

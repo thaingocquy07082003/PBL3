@@ -19,7 +19,7 @@ namespace PBL3_BYME.VIEW
             InitializeComponent();
             Display();
         }
-        public void Display ()
+        public void Display()
         {
             dataGridView1.DataSource = qlp.getAllPhong();
 
@@ -51,41 +51,14 @@ namespace PBL3_BYME.VIEW
             MessageBox.Show("Sửa thành công");
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                // Get the selected row from DataGridView1
-                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        { 
 
-                // Create a new DataTable to hold the selected row data
-                DataTable table = new DataTable();
-
-                // Add columns to the DataTable object to match the columns in the DataGridView2 control
-                table.Columns.Add("IdPhong");
-                table.Columns.Add("TenPhong");
-                table.Columns.Add("DonGiaPhong");
-                table.Columns.Add("TrangThai");
-
-                // ...
-
-                // Populate the DataTable object with data from the selected row of the DataGridView1 control
-                DataRow row = table.NewRow();
-                row["IdPhong"] = selectedRow.Cells["IdPhong"].Value;
-                row["TenPhong"] = selectedRow.Cells["TenPhong"].Value;
-                row["DonGiaPhong"] = selectedRow.Cells["DonGiaPhong"].Value;
-                row["TrangThai"] = selectedRow.Cells["TrangThai"].Value;
-                // ...
-                table.Rows.Add(row);
-
-                txtIDPhong.Text = selectedRow.Cells["IdPhong"].Value.ToString();
-                txtTen.Text = selectedRow.Cells["TenPhong"].Value.ToString();
-                txtGia.Text = selectedRow.Cells["DonGiaPhong"].Value.ToString();
-                txtTrangThai.Text = selectedRow.Cells["TrangThai"].Value.ToString();
-
-                // Set the DataTable object as the DataSource of the DataGridView2 control to display the selected row data in DataGridView2
-                dataGridView2.DataSource = table;
-                    }
+            txtIDPhong.Text = dataGridView1.SelectedRows[0].Cells["IdPhong"].Value.ToString();
+            txtTen.Text = dataGridView1.SelectedRows[0].Cells["TenPhong"].Value.ToString();
+            txtGia.Text = dataGridView1.SelectedRows[0].Cells["DonGiaPhong"].Value.ToString();
+            txtTrangThai.Text = dataGridView1.SelectedRows[0].Cells["TrangThai"].Value.ToString();
+            dataGridView2.DataSource = qlp.GetVatDungPhongByID(dataGridView1.SelectedRows[0].Cells["IdPhong"].Value.ToString());
         }
     }
 }

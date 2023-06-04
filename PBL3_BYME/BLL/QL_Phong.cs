@@ -133,5 +133,35 @@ namespace PBL3_BYME.BLL
             }
             return data;
         }
+        public List<VatDungPhong_View> GetVatDungPhongByID(String id)
+        {
+            List<VatDungPhong_View> data= new List<VatDungPhong_View>();
+
+            foreach (var i in db.VatDungPhongs.ToList())
+            {
+                if (i.IdPhong==id)
+                {
+                    data.Add(new VatDungPhong_View
+                    {
+                        IdVatDung = i.IdVatDung,
+                        TenVatDung=GetTenVatDung(i.IdLoaiVatDung),
+                        SoLuongVatDung=i.SoLuongBanDau.Value
+
+                    });
+                }
+            }
+            return data;
+        }
+        public String GetTenVatDung(String id) {
+            String t="";
+            foreach (var i in db.LoaiVatDungs.ToList())
+            {
+                if (i.IdLoaiVatDung==id)
+                {
+                    t=i.TenVatDung;
+                }
+            }
+            return t;
+        }
     }
 }

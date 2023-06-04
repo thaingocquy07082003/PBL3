@@ -75,7 +75,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(157, 38);
             this.button2.TabIndex = 3;
-            this.button2.Text = "Exit";
+            this.button2.Text = "Biểu Đồ";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -112,7 +112,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1326, 457);
+            this.ClientSize = new System.Drawing.Size(1326, 458);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);

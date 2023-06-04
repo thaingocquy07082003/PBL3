@@ -23,6 +23,19 @@ namespace PBL3_BYME
             InitializeComponent();
             SetLoadForm();
         }
+
+        public FormDatPhong(string namephong, DateTime dt1, DateTime dt2)
+        {
+            InitializeComponent();
+            SetLoadForm();
+            int index = comboBox1.FindStringExact(namephong);
+            if (index != -1)
+            {
+                comboBox1.SelectedIndex = index;
+            }
+            dateTimePicker1.Value = dt1;
+            dateTimePicker2.Value = dt2;
+        }
         // Setup cho Thong tin dat phong
         public void SetLoadForm()
         {
@@ -149,6 +162,13 @@ namespace PBL3_BYME
         private void button4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            TimPhong tim = new TimPhong();
+            tim.Show();
         }
     }
 }

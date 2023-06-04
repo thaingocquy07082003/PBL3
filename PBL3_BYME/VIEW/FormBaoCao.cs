@@ -1,5 +1,6 @@
 ﻿using PBL3_BYME.BLL;
 using PBL3_BYME.DTO;
+using PBL3_BYME.VIEW;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,7 @@ namespace PBL3_BYME
     {
         public QLKSEntities db = new QLKSEntities();
         public BaoCao_BLL tmp = new BaoCao_BLL();
+        public List<BaoCao> data = new List<BaoCao>();
         public FormBaoCao()
         {
             InitializeComponent();
@@ -36,8 +38,7 @@ namespace PBL3_BYME
             }
         }
         public void show()
-        {
-            List<BaoCao> data = new List<BaoCao>();
+        {            
             int nam = comboBox2.SelectedIndex + 2018;
             int thang = comboBox1.SelectedIndex;
             if (thang == 0)
@@ -64,7 +65,30 @@ namespace PBL3_BYME
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Dispose();
+            //Dispose();
+            List<ThongKe_DoanhThuTheoThang> dttt = new List<ThongKe_DoanhThuTheoThang>();
+            foreach(BaoCao i in data)
+            {
+                dttt.Add(new ThongKe_DoanhThuTheoThang
+                {
+                    thang = i.ThangNam,
+                    doanhthu = i.TongDoanhThu
+                });
+            }
+            List<ThongKe_DichVu> tkdv = new List<ThongKe_DichVu>();
+            List<string> namedv = db.DichVus.Select(p => p.TenDichVu).ToList();
+            foreach(string name in namedv)
+            {
+                tkdv.Add(new ThongKe_DichVu
+                {
+                    tendv = name,
+                    lansd = tmp.SoLanSDDV(name)
+                });
+            }
+            
+            Graphic detail = new Graphic(tkdv, dttt);
+            detail.Show();
+            
         }
 
  

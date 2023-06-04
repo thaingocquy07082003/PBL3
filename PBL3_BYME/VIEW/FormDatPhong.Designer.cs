@@ -52,6 +52,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -69,7 +70,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(13, 26);
+            this.groupBox1.Location = new System.Drawing.Point(25, 331);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(433, 247);
             this.groupBox1.TabIndex = 0;
@@ -80,7 +81,7 @@
             // 
             this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Location = new System.Drawing.Point(50, 167);
+            this.groupBox2.Location = new System.Drawing.Point(49, 168);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(290, 62);
             this.groupBox2.TabIndex = 6;
@@ -163,6 +164,7 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.LightGreen;
+            this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Controls.Add(this.dateTimePicker2);
             this.groupBox3.Controls.Add(this.label9);
@@ -170,7 +172,7 @@
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.comboBox1);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Location = new System.Drawing.Point(14, 319);
+            this.groupBox3.Location = new System.Drawing.Point(25, 26);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(433, 270);
             this.groupBox3.TabIndex = 1;
@@ -180,7 +182,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.Location = new System.Drawing.Point(143, 205);
+            this.button3.Location = new System.Drawing.Point(56, 201);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(109, 23);
             this.button3.TabIndex = 8;
@@ -292,6 +294,17 @@
             this.dataGridView2.Size = new System.Drawing.Size(590, 201);
             this.dataGridView2.TabIndex = 6;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(217, 201);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Tìm phòng";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormDatPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -344,5 +357,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -94,6 +94,7 @@
     <Compile Include="DTO\LamHu_view.cs" />
     <Compile Include="DTO\Phong_View.cs" />
     <Compile Include="DTO\TaiKhoanView.cs" />
+    <Compile Include="DTO\VatDungPhong_View.cs" />
     <Compile Include="HoaDon.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>

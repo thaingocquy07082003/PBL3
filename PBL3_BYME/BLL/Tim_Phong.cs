@@ -16,7 +16,7 @@ namespace PBL3_BYME.BLL
             var c = db.PHONGs.Find(idphong);
             foreach (var item in c.ChiTietThuePhongs)
             {
-                if (item.TrangThai == false)
+                if (item.TrangThai == true)
                 {
                     TimeSpan Time = item.NgayCheckOut.Value - item.NgayCheckIn.Value;
                     int songay = Time.Days;

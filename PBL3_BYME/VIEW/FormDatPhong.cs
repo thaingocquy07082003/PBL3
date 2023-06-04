@@ -53,10 +53,10 @@ namespace PBL3_BYME
             }
             string IdBook = label4.Text;
             
-            if(datphong.CheckIDBook(label5.Text) == true)
-            {
-                IdBook = datphong.GetIdBookByIdKH(label5.Text);
-            }
+            //if(datphong.CheckIDBook(label5.Text) == true)
+            //{
+            //    IdBook = datphong.GetIdBookByIdKH(label5.Text);
+            //}
             ChiTietBook a = new ChiTietBook
             {
                 IdChiTietBook = datphong.GetNewIDCTB(),
@@ -114,10 +114,11 @@ namespace PBL3_BYME
             }
             int tiencoc = 0;
             if (textBox1.Text != "") tiencoc = Convert.ToInt32(textBox1.Text);
-            if (datphong.CheckIDBook(label5.Text) == false)// kh chưa có book trong hệ thống
-            {
-                datphong.AddBook(label5.Text, label6.Text, tiencoc);
-            }
+            //if (datphong.CheckIDBook(label5.Text) == false)// kh chưa có book trong hệ thống
+            //{
+            //    datphong.AddBook(label5.Text, label6.Text, tiencoc);
+            //}
+            datphong.AddBook(label5.Text, label6.Text, tiencoc);
             datphong.AddChiTiet(listchitiet);
             string newid = datphong.GetNewIDHD();
             HoaDon hoadon = new HoaDon {
@@ -142,6 +143,11 @@ namespace PBL3_BYME
             ChiTietThuePhongAdd fom = new ChiTietThuePhongAdd(newid, datphong.GetIDPhongByTenPhong(comboBox1.SelectedItem.ToString()));
             fom.ShowDialog();
             this.Close();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -43,11 +43,11 @@ namespace PBL3_BYME.BLL
         }
 
         // Kiem tra ton tai cua 1 IdBook
-        public bool CheckIDBook(string idkhach)
+        public bool CheckIDBook(string idbook)
         {
             foreach (var i in db.Books.Select(p => p))
             {
-                if (i.IdKhachHang == idkhach && i.TrangThai == false)
+                if (i.IdBook == idbook && i.TrangThai == false)
                 {
                     return true;
                 }

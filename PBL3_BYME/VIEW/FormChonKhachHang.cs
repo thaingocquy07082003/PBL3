@@ -51,6 +51,7 @@ namespace PBL3_BYME
             fa.ShowDialog();
             fa = null;
             this.Show();
+            SetDisplay();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

@@ -36,7 +36,7 @@ namespace PBL3_BYME
            
             foreach (CBBItemPhong i in data)
             {
-                if (datphong.Check(i.Value, dateTimePicker1.Value, dateTimePicker2.Value) == true)
+                if (datphong.Check(i.Value, dateTimePicker1.Value, dateTimePicker2.Value) == false)
                 {
                     listRoom.Add(i.Text);
                     foreach (Button j in panel1.Controls)

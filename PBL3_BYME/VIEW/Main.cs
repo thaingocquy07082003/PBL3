@@ -60,6 +60,8 @@ namespace PBL3_BYME
                 button9.Enabled = false;
                 button3.Visible = false;
                 button3.Enabled = false;
+                button5.Visible = false;
+                button5.Enabled = false;
             }
         }
         private void pictureBox1_Click(object sender, EventArgs e)

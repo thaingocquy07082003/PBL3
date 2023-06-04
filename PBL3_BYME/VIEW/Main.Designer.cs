@@ -35,7 +35,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.MenuUser = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -106,7 +105,6 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkBlue;
-            this.panel4.Controls.Add(this.button11);
             this.panel4.Controls.Add(this.button10);
             this.panel4.Controls.Add(this.pictureBox3);
             this.panel4.Controls.Add(this.label1);
@@ -115,16 +113,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1361, 127);
             this.panel4.TabIndex = 1;
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button11.Location = new System.Drawing.Point(525, 55);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(91, 30);
-            this.button11.TabIndex = 4;
-            this.button11.Text = "button11";
-            this.button11.UseVisualStyleBackColor = false;
             // 
             // button10
             // 
@@ -147,7 +135,7 @@
             this.toolStripMenuItem3});
             this.MenuUser.Name = "MenuUser";
             this.MenuUser.ShowCheckMargin = true;
-            this.MenuUser.Size = new System.Drawing.Size(239, 110);
+            this.MenuUser.Size = new System.Drawing.Size(239, 82);
             this.MenuUser.Text = "MenuUser";
             // 
             // toolStripMenuItem1
@@ -217,9 +205,9 @@
             this.panel5.Controls.Add(this.button8);
             this.panel5.Controls.Add(this.button7);
             this.panel5.Controls.Add(this.button6);
+            this.panel5.Controls.Add(this.button3);
             this.panel5.Controls.Add(this.button5);
             this.panel5.Controls.Add(this.button4);
-            this.panel5.Controls.Add(this.button3);
             this.panel5.Controls.Add(this.button2);
             this.panel5.Controls.Add(this.button1);
             this.panel5.Location = new System.Drawing.Point(-3, 127);
@@ -240,7 +228,7 @@
             // button8
             // 
             this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.Location = new System.Drawing.Point(3, 447);
+            this.button8.Location = new System.Drawing.Point(0, 316);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(208, 65);
             this.button8.TabIndex = 7;
@@ -250,7 +238,7 @@
             // button7
             // 
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(3, 382);
+            this.button7.Location = new System.Drawing.Point(3, 251);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(208, 68);
             this.button7.TabIndex = 6;
@@ -260,7 +248,7 @@
             // button6
             // 
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(3, 318);
+            this.button6.Location = new System.Drawing.Point(3, 188);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(208, 67);
             this.button6.TabIndex = 5;
@@ -270,7 +258,7 @@
             // button5
             // 
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(0, 251);
+            this.button5.Location = new System.Drawing.Point(-3, 378);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(211, 69);
             this.button5.TabIndex = 4;
@@ -280,7 +268,7 @@
             // button4
             // 
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(3, 186);
+            this.button4.Location = new System.Drawing.Point(0, 125);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(208, 67);
             this.button4.TabIndex = 3;
@@ -290,7 +278,7 @@
             // button3
             // 
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(0, 132);
+            this.button3.Location = new System.Drawing.Point(0, 441);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(211, 71);
             this.button3.TabIndex = 2;
@@ -302,7 +290,7 @@
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.Location = new System.Drawing.Point(3, 66);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(208, 74);
+            this.button2.Size = new System.Drawing.Size(208, 64);
             this.button2.TabIndex = 1;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -406,7 +394,6 @@
         public System.Windows.Forms.ContextMenuStrip MenuQuanLi;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button10;
     }
 }

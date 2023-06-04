@@ -60,5 +60,40 @@ namespace PBL3_BYME
             }
             ShowRoom();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FormDatPhong datp = new FormDatPhong("T105", dateTimePicker1.Value, dateTimePicker2.Value);
+            this.Close();
+            datp.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FormDatPhong datp = new FormDatPhong("T104", dateTimePicker1.Value, dateTimePicker2.Value);
+            this.Close();
+            datp.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormDatPhong datp = new FormDatPhong("T103", dateTimePicker1.Value, dateTimePicker2.Value);
+            this.Close();
+            datp.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormDatPhong datp = new FormDatPhong("T102", dateTimePicker1.Value, dateTimePicker2.Value);
+            this.Close();
+            datp.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormDatPhong datp = new FormDatPhong("T101", dateTimePicker1.Value, dateTimePicker2.Value);
+            this.Close();
+            datp.Show();
+        }
     }
 }

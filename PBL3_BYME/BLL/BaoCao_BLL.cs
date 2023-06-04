@@ -145,6 +145,34 @@ namespace PBL3_BYME.BLL
             }
             return s;
         }
+
+        // so lan su dung dich vu 
+        public int SoLanSDDV(string tendv)
+        {
+            int s = 0;
+            foreach (ChiTietSuDungDichVu i in db.ChiTietSuDungDichVus.ToList())
+            {
+                if (GetIdDV(tendv) == i.ID_DichVu)
+                {
+                    s++;
+                }
+            }
+            return s;
+        }
+
+        // lay id dich vu
+        public string GetIdDV(string tendv)
+        {
+            string s = "";
+            foreach (DichVu i in db.DichVus.ToList())
+            {
+                if (i.TenDichVu == tendv)
+                {
+                    return i.IdDichVu;
+                }
+            }
+            return s;
+        }
     }
 
 }

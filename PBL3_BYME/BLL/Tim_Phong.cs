@@ -20,7 +20,7 @@ namespace PBL3_BYME.BLL
                 {
                     TimeSpan Time = item.NgayCheckOut.Value - item.NgayCheckIn.Value;
                     int songay = Time.Days;
-                    for (int i = 0; i <= songay; i++)
+                    for (int i = 0; i < songay; i++)
                     {
                         data.Add(item.NgayCheckIn.Value.AddDays(+i));
                     }
@@ -33,7 +33,7 @@ namespace PBL3_BYME.BLL
                 {
                     TimeSpan Time = item.NgayCheckOutPhong.Value - item.NgayCheckInPhong.Value;
                     int songay = Time.Days;
-                    for (int i = 0; i <= songay; i++)
+                    for (int i = 0; i < songay; i++)
                     {
                         data.Add(item.NgayCheckInPhong.Value.AddDays(+i));
                     }
